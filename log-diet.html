@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Diet Evaluation</title>
+    <meta name="description" content="Pup Paws - Info about your pet">
+    <meta name="author" content="Pup Paws">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css?v=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  </head>
+  <body>
+    <h1>Pup Paws</h1>
+    <h2>Diet Evaluation</h2>
+    <section>
+      <span class="mdl-chip mdl-chip--contact">
+        <span class="mdl-chip__text">
+          <p id="date"></p>
+            <script>
+              document.getElementById("date").innerHTML = Date();
+            </script>
+        </span>
+      </span>
+    </section>
+
+    <main>
+      <section>
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Check all Applicable Boxes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">Did {PetsName} eat their regular brand of food today?</td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">Did {PetsName} eat according to schedule?</td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">Did {PetsName} eat their regular amount of food today?</td>
+      </section>
+
+      <section>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+          Post
+        </button>
+
+        <button class="mdl-button mdl-js-button mdl-button--raised" disabled>
+          Cancel
+        </button>
+      </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
