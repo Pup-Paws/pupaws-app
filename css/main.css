@@ -53,18 +53,31 @@ section.dog-summary-card img.dog-photo{
 }
 
 
-.doglogo {
+.dog-logo {
  width: 50%;
  max-width: 200px;
  display: block;
  margin: 0 auto var(--medium-spacing) auto;
 }
 
-.welcome-copy{
+.centered-copy{
   margin-bottom: var(--medium-spacing);
 }
 
 .setup-button{
   display: block;
   margin: 0 auto 0 auto;
+}
+
+.setup-actions{
+  display: flex;
+  flex-flow: row;
+}
+
+.setup-button{
+  width: 60%;
+}
+
+.skip-button{
+  width: 30%;
 }
