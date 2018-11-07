@@ -3,9 +3,38 @@ body{
   color: #333;
 }
 
-main{
-  padding: 2em;
+:root{
+  --small-spacing: 15px;
+  --medium-spacing: 30px;
+  --large-spacing: 50px;
 }
+
+h1{
+  font-size: 2.5em;
+  margin-bottom: var(--medium-spacing);
+}
+
+h2{
+  font-size: 2.125em;
+}
+
+h3{
+  font-size: 2.875em;
+}
+
+.content-wrapper{
+  padding: var(--medium-spacing);
+}
+
+.steps{
+  text-align: center;
+}
+
+header h1{
+  text-align: center;
+}
+
+
 
 section.dog-summary-card{
   width: 70%;
@@ -23,10 +52,19 @@ section.dog-summary-card img.dog-photo{
   text-align: center;
 }
 
-.doglogo img{
+
+.doglogo {
+ width: 50%;
  max-width: 200px;
  display: block;
- margin-left: auto;
- margin-right: auto;
- width: 50%;
+ margin: 0 auto var(--medium-spacing) auto;
+}
+
+.welcome-copy{
+  margin-bottom: var(--medium-spacing);
+}
+
+.setup-button{
+  display: block;
+  margin: 0 auto 0 auto;
 }
