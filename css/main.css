@@ -2,3 +2,23 @@ body{
   font-family: 'Proxima Nova', helvetica, sans-serif;
   color: #333;
 }
+
+main{
+  padding: 2em;
+}
+
+section.dog-summary-card{
+  width: 70%;
+  margin: 0 auto;
+}
+
+section.dog-summary-card img.dog-photo{
+  border-radius: 50%;
+  width: 50%;
+  height: auto;
+  margin: 40px auto 0 auto;
+}
+
+.dog-summary-card h3{
+  text-align: center;
+}
