@@ -13,8 +13,8 @@ const pageContent = document.getElementById('page');
 // Where can we go?
 const routes = {
   '/': homePage,
-  '/todolist': todoListPage,
-  '/credits': creditPage
+  '/welcomescreen2': welcomeScreen2Page
+  // '/credits': creditPage
   // ADD NEW ROUTES HERE THAT POINT TO VIEWS
 };
 

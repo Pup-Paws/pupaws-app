@@ -4,7 +4,9 @@
   --medium-spacing: 30px;
   --large-spacing: 50px;
   --light-grey: #EFEFEF;
+  --medium-grey: #999999;
   --main-green: #8CD0CC;
+  --dark-green: #78ADA8;
 }
 
 body{
@@ -17,7 +19,7 @@ body{
 
 .main-heading {
   font-size: 1.25em;
-  background-color: var(--main-green);
+  background-color: var(--dark-green);
   color: #fff;
   line-height: 2;
   text-align: center;
@@ -25,7 +27,8 @@ body{
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.5em 0;
+  padding: 0.5em 0;
+  margin: 0;
 }
 
 
@@ -43,6 +46,7 @@ h3{
 
 .content-wrapper{
   padding: var(--medium-spacing);
+  background-color: var(--main-green);
 }
 
 .fixed-footer {
@@ -68,12 +72,22 @@ h3{
 
 /*------------------------- CONTENT -------*/
 
-.steps{
+p.steps{
   text-align: center;
+  color: var(--medium-grey);
+}
+
+main.content{
+  height: 100%;
+  background-color: var(--main-green);
 }
 
 header h1{
   text-align: center;
+}
+
+p{
+  margin: 0;
 }
 
 section.dog-summary-card{
@@ -83,7 +97,7 @@ section.dog-summary-card{
 
 section.dog-summary-card img.dog-photo{
   border-radius: 50%;
-  width: 50%;
+  width: 35%;
   height: auto;
   margin: 40px auto 0 auto;
 }
@@ -92,6 +106,25 @@ section.dog-summary-card img.dog-photo{
   text-align: center;
 }
 
+.setup-content{
+  background-color: white;
+  text-align: center;
+}
+
+.content-wrapper.setup{
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.setup-content p{
+  line-height: 1.5em;
+}
+
+.card{
+  border-radius: 4px;
+  padding: var(--small-spacing);
+}
 
 .dog-logo {
  width: 50%;
@@ -110,8 +143,16 @@ section.dog-summary-card img.dog-photo{
 }
 
 .setup-actions{
+  margin: var(--large-spacing) 0;
   display: flex;
   flex-flow: row;
+}
+
+.back-and-page{
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-between;
+
 }
 
 .setup-button{
@@ -124,4 +165,11 @@ section.dog-summary-card img.dog-photo{
 
 .setup-section{
   background-color: var(--light-grey)
+}
+
+.back{
+  color: var(--medium-grey);
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
 }
