@@ -2,11 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Welcome To Pup Paws</title>
+    <title>Pup Paws Dashboard</title>
     <meta name="description" content="Pup Paws - Info about your pet">
     <meta name="author" content="Pup Paws">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -14,22 +13,22 @@
   </head>
   <body>
     <div class="content-wrapper">
-      <header>
-        <a href="welcome-screen1.html">< back</a>
-        <p class="steps">2/2</p>
-        <h1>Welcome To Pup Paws</h1>
-      </header>
-
+      <h1>Set up - Add dog</h1>
       <main>
-        <img src="img/pet.png" alt="dog icon" class="dog-logo">
-        <p class="centered-copy">Now we're gonna set up: dog, food, med.</p>
+        <section>
+          <h2>What type of breed is {petname}?</h2>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="breed-input">
+            <label class="mdl-textfield__label" for="breed-input">Breed</label>
+          </div>
+        </section>
+
         <div class="setup-actions">
-          <a href="welcome-screen2.html" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">skip</a>
-          <a href="add-dog-1-owner-name.html" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Set Up Now</a>
+          <a href="add-dog-2-pets-name.html" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">back</a>
+          <a href="add-dog-4-dob.html" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
         </div>
       </main>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="js/main.js"></script>

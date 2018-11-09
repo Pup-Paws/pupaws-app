@@ -1,18 +1,36 @@
-body{
-  font-family: 'Proxima Nova', helvetica, sans-serif;
-  color: #333;
-}
-
+/*--------------------- VARIABLES       */
 :root{
   --small-spacing: 15px;
   --medium-spacing: 30px;
   --large-spacing: 50px;
   --light-grey: #EFEFEF;
+  --main-green: #8CD0CC;
 }
+
+body{
+  font-family: 'proxima-nova', helvetica, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+/*--------------------------- HEADINGS, WRAPPER, TOP BAR, BOTTOM BAR   */
+
+.main-heading {
+  font-size: 1.25em;
+  background-color: var(--main-green);
+  color: #fff;
+  line-height: 2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0;
+}
+
 
 h1{
   font-size: 2.5em;
-  margin-bottom: var(--medium-spacing);
 }
 
 h2{
@@ -26,6 +44,29 @@ h3{
 .content-wrapper{
   padding: var(--medium-spacing);
 }
+
+.fixed-footer {
+  position: fixed;
+  width: 100%;
+  background-color: #222;
+  bottom: 0;
+  left: 0;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.fixed-footer li {
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 3;
+}
+.fixed-footer a {
+  color: white
+}
+
+
+
+/*------------------------- CONTENT -------*/
 
 .steps{
   text-align: center;

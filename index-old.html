@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pup Paws Dashboard</title>
+    <meta name="description" content="Pup Paws - Info about your pet">
+    <meta name="author" content="Pup Paws">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css?v=1.0">
+
+    <link rel="stylesheet" href="https://use.typekit.net/gxr1xnp.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  </head>
+  <body>
+
+    <header>
+      <h1>
+        <a href="#">
+          <img src="http://placekitten.com/150/150" alt="Pup Paws logo">
+        </a>
+      </h1>
+
+      <i class="fas fa-bars"></i>
+      <div class="top-nav">
+        <h1>Pup Paws</h1>
+        <nav class="mainnav" role="navigation">
+          <div class="menu-main-menu-container">
+            <ul class="main-menu">
+              <li class="main-menu-item"><a href="#">Home</a></li>
+              <!-- <li class="main-menu-item"><a href="#">My profile</a> -->
+              <!-- <li class="main-menu-item"><a href="#">Dogs</a> -->
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="actions-nav">
+        <nav class="actionsnav" role="navigation">
+          <div class="actions-nav-container">
+            <ul class="actions-menu">
+              <li class="actions-menu-item"><a href="log-journal-entry.html">Log Journal</a></li>
+              <li class="actions-menu-item"><a href="#">Log Meds</a>
+              <li class="actions-menu-item"><a href="log-mood.html">Log Mood</a>
+              <li class="actions-menu-item"><a href="log-weight.html">Log Weight</a>
+              <li class="actions-menu-item"><a href="log-activity.html">Log Activity</a>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h2>Dashboard</h2>
+      <section class="dog-summary-card mdl-card mdl-shadow--2dp">
+        <img src="img/merlin.jpg" alt="Merlin" class="dog-photo"/>
+        <div class="mdl-card__supporting-text">
+          <h3>Merlin</h3>
+          <p class="dog-age">2 years old</p>
+        </div>
+      </section>
+
+      <section class="reminders-section">
+        <h4>Reminders</h4>
+        <ul class="reminders-list">
+          <li class="reminder-item">
+            <i>FA Reminder Icon</i>
+            <p>Reminder text</p>
+          </li>
+          <li class="reminder-item">
+            <i>FA Reminder Icon</i>
+            <p>Reminder text</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="weight-history-section">
+        <h4>Weight History</h4>
+        <div class="weight-chart">
+          <!-- Weight Chart Here -->
+        </div>
+        <div class="see-details">
+          <a href="#">See More</a>
+        </div>
+      </section>
+
+      <section class="mood-history-section">
+        <h4>Mood History</h4>
+        <div class="mood-chart">
+          <!-- Weight Chart Here -->
+        </div>
+        <div class="see-details">
+          <a href="#">See More</a>
+        </div>
+      </section>
+
+      <section class="activity-history-section">
+        <h4>Activity History</h4>
+        <div class="activity-chart">
+          <!-- Weight Chart Here -->
+        </div>
+        <div class="see-details">
+          <a href="#">See More</a>
+        </div>
+        <div class="tip">
+          <i>Tip Icon</i>
+          <p>Your dog didn't receive proper exercise in the last few days, he might be stressed.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
