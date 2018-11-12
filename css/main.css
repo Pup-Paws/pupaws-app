@@ -173,3 +173,35 @@ section.dog-summary-card img.dog-photo{
   text-transform: uppercase;
   text-decoration: none;
 }
+
+.select-gender{
+  display: flex;
+  flex-flow: row;
+}
+
+.gender-form-label{
+  width: 50%;
+  padding-top: var(--medium-spacing);
+  padding-bottom: var(--medium-spacing);
+}
+
+/* HIDE RADIO */
+input.gender-input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+input.gender-input[type="radio"] + i {
+  cursor: pointer;
+  height: auto;
+  font-size: 3em;
+  opacity: .3;
+}
+
+/* CHECKED STYLES */
+input.gender-input[type="radio"]:checked + i {
+  opacity: 1;
+}

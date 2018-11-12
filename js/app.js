@@ -13,7 +13,13 @@ const pageContent = document.getElementById('page');
 // Where can we go?
 const routes = {
   '/': homePage,
-  '/welcomescreen2': welcomeScreen2Page
+  '/welcomescreen2': welcomeScreen2Page,
+  '/adddog1': addDog1Page,
+  '/adddog2': addDog2Page,
+  '/adddog3': addDog3Page,
+  '/adddog4': addDog4Page,
+  '/adddog5': addDog5Page,
+  '/dashboard': dashboardPage,
   // '/credits': creditPage
   // ADD NEW ROUTES HERE THAT POINT TO VIEWS
 };
