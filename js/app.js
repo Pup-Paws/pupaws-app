@@ -42,8 +42,65 @@ window.addEventListener('load', (e) => {
       drawPage();
     }
   })
+
+  createWeightChart();
+  createMoodChart();
 });
 
 function drawPage() {
   pageContent.innerHTML = routes[window.location.pathname];
+}
+
+function createWeightChart(){
+  var weightData = {
+    // A labels array that can contain any sort of values
+    labels: ['Oct 1', 'Oct 8', 'Oct 15', 'Oct 22', 'Oct 29'],
+    // Our series array that contains series objects or in this case series data arrays
+    series: [
+      [12.5, 12.8, 13, 13.4, 14]
+    ]
+  };
+
+  var options = {
+    axisY: {
+      offset: 60,
+      labelInterpolationFnc: function(value) {
+        return value + ' lbs'
+      },
+    }
+  } ;
+
+  new Chartist.Line('#weight-chart', weightData, options);
+}
+
+function createMoodChart(){
+  var moodData = {
+    // A labels array that can contain any sort of values
+    labels: ['Oct 1', 'Oct 8', 'Oct 15', 'Oct 22', 'Oct 29'],
+    // Our series array that contains series objects or in this case series data arrays
+    series: [
+      [2, 0, 1, 1, 2]
+    ]
+  };
+
+  var options = {
+    axisY: {
+      offset: 60,
+      labelInterpolationFnc: function(value) {
+        if (value == 0) {
+          return 'Sad =('
+        }
+
+        if (value == 1) {
+          return 'Okay :|'
+        }
+
+        if (value == 2) {
+          return 'Happy :)'
+        }
+      },
+    }
+  } ;
+
+  new Chartist.Line('#mood-chart', moodData, options);
 }

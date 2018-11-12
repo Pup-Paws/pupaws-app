@@ -44,6 +44,10 @@ h3{
   font-size: 2.875em;
 }
 
+main{
+  margin-bottom: var(--large-spacing);
+}
+
 .content-wrapper{
   padding: var(--medium-spacing);
   background-color: var(--main-green);
@@ -52,12 +56,15 @@ h3{
 .fixed-footer {
   position: fixed;
   width: 100%;
+  height: var(--large-spacing);
   background-color: #222;
   bottom: 0;
   left: 0;
   color: white;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  z-index: 99;
 }
 .fixed-footer li {
   border: 1px solid #999;
@@ -77,10 +84,10 @@ p.steps{
   color: var(--medium-grey);
 }
 
-main.content{
+/*section.content{
   height: 100%;
   background-color: var(--main-green);
-}
+}*/
 
 header h1{
   text-align: center;
@@ -90,21 +97,7 @@ p{
   margin: 0;
 }
 
-section.dog-summary-card{
-  width: 70%;
-  margin: 0 auto;
-}
 
-section.dog-summary-card img.dog-photo{
-  border-radius: 50%;
-  width: 35%;
-  height: auto;
-  margin: 40px auto 0 auto;
-}
-
-.dog-summary-card h3{
-  text-align: center;
-}
 
 .setup-content{
   background-color: white;
@@ -204,4 +197,69 @@ input.gender-input[type="radio"] + i {
 /* CHECKED STYLES */
 input.gender-input[type="radio"]:checked + i {
   opacity: 1;
+}
+
+section.dashboard-section{
+  padding: var(--medium-spacing);
+}
+
+
+
+/*------------------------------- DASHBOARD ---------*/
+
+section.dog-summary-card{
+  width: 70%;
+  margin: var(--small-spacing) auto;
+  text-align: center;
+  padding: var(--medium-spacing);
+}
+
+section.dog-summary-card img.dog-photo{
+  border-radius: 50%;
+  width: 50%;
+  height: auto;
+  margin: 0 auto 0 auto;
+}
+
+section.dog-summary-card h3{
+  color: var(--main-green);
+}
+
+section.dog-summary-card p{
+  text-transform: uppercase;
+}
+
+li.reminder-item{
+  display: grid;
+  grid-template-columns: 25% 65% 10%;
+  align-items: center;
+}
+
+div.checkbox{
+  justify-self: end;
+}
+input[type="checkbox"] { display:none; } /* to hide the checkbox itself */
+input[type="checkbox"] + span:before {
+  font-family: 'Font Awesome 5 Free';
+  display: inline-block;
+  font-size: 1.5em;
+  justify-self: end;
+  color: var(--medium-grey);
+}
+
+input[type="checkbox"]:checked + span:before{
+  content: "\f14a";
+  font-weight: 900;
+  color: var(--dark-green);
+}
+
+input[type="checkbox"] + span:before{
+  content: "\f14a";
+  font-weight: normal;
+}
+
+
+
+.ct-series-a .ct-line, .ct-series-a .ct-point {
+  stroke: var(--dark-green);
 }

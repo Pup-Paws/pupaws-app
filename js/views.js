@@ -173,97 +173,65 @@ let addDog5Page = `
 
 
 let dashboardPage = `
-<h1>
-  <a href="#">
-    <img src="http://placekitten.com/150/150" alt="Pup Paws logo">
-  </a>
-</h1>
-
-<i class="fas fa-bars"></i>
-<div class="top-nav">
-  <h1>Pup Paws</h1>
-  <nav class="mainnav" role="navigation">
-    <div class="menu-main-menu-container">
-      <ul class="main-menu">
-        <li class="main-menu-item"><a href="#">Home</a></li>
-        <!-- <li class="main-menu-item"><a href="#">My profile</a> -->
-        <!-- <li class="main-menu-item"><a href="#">Dogs</a> -->
-      </ul>
-    </div>
-  </nav>
-</div>
-
-<div class="actions-nav">
-  <nav class="actionsnav" role="navigation">
-    <div class="actions-nav-container">
-      <ul class="actions-menu">
-        <li class="actions-menu-item"><a href="log-journal-entry.html">Log Journal</a></li>
-        <li class="actions-menu-item"><a href="#">Log Meds</a>
-        <li class="actions-menu-item"><a href="log-mood.html">Log Mood</a>
-        <li class="actions-menu-item"><a href="log-weight.html">Log Weight</a>
-        <li class="actions-menu-item"><a href="log-activity.html">Log Activity</a>
-      </ul>
-    </div>
-  </nav>
-</div>
-</header>
-
-<main>
-<h2>Dashboard</h2>
 <section class="dog-summary-card mdl-card mdl-shadow--2dp">
-  <img src="img/merlin.jpg" alt="Merlin" class="dog-photo"/>
-  <div class="mdl-card__supporting-text">
-    <h3>Merlin</h3>
-    <p class="dog-age">2 years old</p>
-  </div>
+  <img src="images/merlin.jpg" alt="Merlin" class="dog-photo"/>
+  <h3>Merlin</h3>
+  <p class="dog-age">2 years old</p>
 </section>
 
-<section class="reminders-section">
+<section class="dashboard-section reminders-section">
   <h4>Reminders</h4>
   <ul class="reminders-list">
     <li class="reminder-item">
-      <i>FA Reminder Icon</i>
-      <p>Reminder text</p>
+      <p class="reminder-date">3 days ago</p>
+      <p class="reminder-description">Give Merlin the Heartgard pill</p>
+      <div class="checkbox">
+        <label for="checkbox-done1">
+          <input id="checkbox-done1" type="checkbox" class="checkbox-done" />
+          <span></span>
+        </label>
+      </div>
     </li>
     <li class="reminder-item">
-      <i>FA Reminder Icon</i>
-      <p>Reminder text</p>
+      <p class="reminder-date">Tomorrow</p>
+      <p class="reminder-description">Annual vaccination</p>
+      <div class="checkbox">
+        <label for="checkbox-done2">
+          <input id="checkbox-done2" type="checkbox" class="checkbox-done" />
+          <span></span>
+        </label>
+      </div>
+    </li>
+    <li class="reminder-item">
+      <p class="reminder-date">10/12/2018</p>
+      <p class="reminder-description">Bravecto</p>
+      <div class="checkbox">
+        <label for="checkbox-done3">
+          <input id="checkbox-done3" type="checkbox" class="checkbox-done" />
+          <span></span>
+        </label>
+      </div>
     </li>
   </ul>
 </section>
 
-<section class="weight-history-section">
+<section class="dashboard-section weight-history-section">
   <h4>Weight History</h4>
   <div class="weight-chart">
-    <!-- Weight Chart Here -->
+    <div class="ct-chart ct-perfect-fourth" id="weight-chart"></div>
   </div>
-  <div class="see-details">
+  <!-- <div class="see-details">
     <a href="#">See More</a>
-  </div>
+  </div> -->
 </section>
 
-<section class="mood-history-section">
+<section class="dashboard-section mood-history-section">
   <h4>Mood History</h4>
   <div class="mood-chart">
-    <!-- Weight Chart Here -->
+    <div class="ct-chart ct-perfect-fourth" id="mood-chart"></div>
   </div>
-  <div class="see-details">
+  <!-- <div class="see-details">
     <a href="#">See More</a>
-  </div>
+  </div> -->
 </section>
-
-<section class="activity-history-section">
-  <h4>Activity History</h4>
-  <div class="activity-chart">
-    <!-- Weight Chart Here -->
-  </div>
-  <div class="see-details">
-    <a href="#">See More</a>
-  </div>
-  <div class="tip">
-    <i>Tip Icon</i>
-    <p>Your dog didn't receive proper exercise in the last few days, he might be stressed.</p>
-  </div>
-</section>
-
 `;
