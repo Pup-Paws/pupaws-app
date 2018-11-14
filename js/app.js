@@ -19,6 +19,9 @@ const routes = {
   '/adddog3': addDog3Page,
   '/adddog4': addDog4Page,
   '/adddog5': addDog5Page,
+  '/adddog6': addDog6Page,
+  '/adddog7': addDog7Page,
+  '/adddog8': addDog8Page,
   '/dashboard': dashboardPage,
   // '/credits': creditPage
   // ADD NEW ROUTES HERE THAT POINT TO VIEWS
