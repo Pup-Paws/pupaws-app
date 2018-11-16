@@ -1,4 +1,4 @@
-let homePage = `
+let welcomescreen1Page = `
   <div class="content-wrapper setup">
     <header>
       <img src="images/logo_500px.png" alt="dog icon" class="dog-logo">
@@ -25,7 +25,7 @@ let welcomeScreen2Page = `
   <div class="setup-content card">
     <div class="back-and-page">
       <p class="steps">2/2</p>
-      <a href="/" class="back">< back</a>
+      <a href="/welcomescreen1" class="back">< back</a>
     </div>
     <h2>Welcome To Pup Paws</h2>
     <p class="centered-copy">First off we’re going to set up your profile, and your dog’s profile! You can update this information at any time! And, we promise to keep your information and your dog’s information strictly confidential!</p>
@@ -251,6 +251,10 @@ let addDog8Page = `
 `;
 
 let dashboardPage = `
+<div class="content-wrapper">
+    <h2>Dashboard</h2>
+</div>
+
 <section class="dog-summary-card mdl-card mdl-shadow--2dp">
   <img src="images/merlin.jpg" alt="Merlin" class="dog-photo"/>
   <h3>Merlin</h3>
@@ -312,4 +316,111 @@ let dashboardPage = `
     <a href="#">See More</a>
   </div> -->
 </section>
+`;
+
+let journalPage = `
+<ul class="journal-list">
+  <li class="monthly-entries">
+    <div class="month-title">
+      <h3>October</h3>
+    </div>
+    <div class="activities-list">
+      <ul>
+        <li class="activity-entry">
+          <div class="entry-photo">
+            <img src="http://placekitten.com/70/70" alt="">
+          </div>
+          <div class="entry-text">
+            <h4 class="date">October 21, 2018</h4>
+            <p class="title">Very Energetic!</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </li>
+        <li class="activity-entry">
+          <div class="entry-photo">
+            <img src="http://placekitten.com/70/70" alt="">
+          </div>
+          <div class="entry-text">
+            <h4 class="date">October 20, 2018</h4>
+            <p class="title">Very Energetic!</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="monthly-entries">
+    <div class="month-title">
+      <h3>September</h3>
+    </div>
+    <div class="activities-list">
+      <ul>
+        <li class="activity-entry">
+          <div class="entry-photo">
+            <img src="http://placekitten.com/70/70" alt="">
+          </div>
+          <div class="entry-text">
+            <h4 class="date">September 09, 2018</h4>
+            <p class="title">Lorem Ipsum</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="monthly-entries">
+    <div class="month-title">
+      <h3>August</h3>
+    </div>
+    <div class="activities-list">
+      <ul>
+        <li class="activity-entry">
+          <div class="entry-photo">
+            <img src="http://placekitten.com/70/70" alt="">
+          </div>
+          <div class="entry-text">
+            <h4 class="date">August 09, 2018</h4>
+            <p class="title">Lorem Ipsum</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>
+<div class="action-add-button">
+  <a href="/journaladd" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+    <i class="material-icons">add</i>
+  </a>
+</div>
+`;
+
+
+let journalAddPage = `
+<section class="content-wrapper setup">
+  <div class="setup-content card">
+    <section >
+      <form action="#">
+        <h2>Log activity</h2>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="weight-input">
+          <label class="mdl-textfield__label" for="food-input">Activity title</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <textarea class="mdl-textfield__input" type="text" rows= "1" id="sample5" ></textarea>
+          <label class="mdl-textfield__label" for="sample5">Description</label>
+        </div>
+      </form>
+    </section>
+    <div class="setup-actions">
+      <a href="/journal" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
+      <a href="/journal" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Finish</a>
+    </div>
+  </div>
+</section>
+`;
+
+let profilePage = `
+<h1>COMING SOON. KEEP TUNED!</h1>
+<img src="http://placekitten.com/400/400" alt="" />
 `;

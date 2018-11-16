@@ -6,13 +6,9 @@ if ('serviceWorker' in navigator) {
   );
 }
 
-
-// Where in the page will the content be?
-const pageContent = document.getElementById('page');
-
 // Where can we go?
 const routes = {
-  '/': homePage,
+  '/welcomescreen1': welcomescreen1Page,
   '/welcomescreen2': welcomeScreen2Page,
   '/adddog1': addDog1Page,
   '/adddog2': addDog2Page,
@@ -23,36 +19,103 @@ const routes = {
   '/adddog7': addDog7Page,
   '/adddog8': addDog8Page,
   '/dashboard': dashboardPage,
+  '/journal': journalPage,
+  '/journaladd': journalAddPage,
+  '/profile': profilePage,
   // '/credits': creditPage
   // ADD NEW ROUTES HERE THAT POINT TO VIEWS
 };
 
-// On load of the application
-window.addEventListener('load', (e) => {
-  // Draw the first page
-  drawPage();
 
-  // If we hit our history button, redraw the page
-  window.addEventListener('popstate', event => {
-    drawPage();
-  });
+// Temporary data, replace with cached data:
+// https://developers.google.com/web/ilt/pwa/live-data-in-the-service-worker
+// https://github.com/jakearchibald/idb (https://www.npmjs.com/package/idb)
+var tasks = [
+  {name:"Feed the dog", complete:0},
+  {name:"Cut the grass", complete:0}
+];
+// Improvements: Tasks should be an Object
 
-  // If we clich an Anchor (<a>) in HTML, route to it's HREF value without reloading
-  document.addEventListener('click', (e) => {
-    if (e.target.nodeName == 'A') {
-      e.preventDefault();
-      history.pushState(null, '', e.target.pathname);
-      drawPage();
-    }
-  })
 
-  createWeightChart();
-  createMoodChart();
-});
 
-function drawPage() {
-  pageContent.innerHTML = routes[window.location.pathname];
-}
+// DATA UPDATER:
+// Fires every time a page changes
+document.getElementById('page').addEventListener('page', function (e) {
+  // If the current page is the todoListPage, grab the data for it
+  // This needs some improvement
+
+  if(currPage == '/dashboard'){
+    createWeightChart();
+    createMoodChart();
+  }
+
+  if (currPage == '/todolist') {
+    // Find the main task list
+    var taskList = document.getElementById('taskList');
+    // For each task, call createTask and join them all together with a linebreak between
+    taskList.innerHTML = tasks.map(createTask).join('\n');
+
+    // Now setup the click listener on the button to add a new task
+    document.getElementById('addtask').addEventListener('click', function() {
+      // Create a new task based on the user's input value (this is ugly)
+      var newTask = {name:document.getElementById('newtask').value, complete:0};
+      // Add to our "dataset"
+      tasks.push(newTask);
+      // createTask creates a new task
+      taskList.innerHTML += createTask(newTask);
+
+      // Could also trigger a refresh when the task data is changed (then task data should be a class!!)
+    });
+  }
+}, false);
+
+
+// -------------------------------------- OLD CODE
+
+// // Functions for each chunk of repeating data
+// function createTask(task) {
+//   return `<li class="task">${task.name}</li>`;
+// }
+//
+// // On load of the application
+// window.addEventListener('load', (e) => {
+//   // Draw the first page
+//   drawPage();
+//
+//   // If we hit our history button, redraw the page
+//   window.addEventListener('popstate', event => {
+//     drawPage();
+//   });
+//
+//   // If we clich an Anchor (<a>) in HTML, route to it's HREF value without reloading
+//   document.addEventListener('click', (e) => {
+//     if (e.target.nodeName == 'A') {
+//       e.preventDefault();
+//       history.pushState(null, '', e.target.pathname);
+//       drawPage();
+//     }
+//   })
+//
+//   createWeightChart();
+//   createMoodChart();
+// });
+//
+// function drawPage() {
+//   pageContent.innerHTML = routes[window.location.pathname];
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------- FUNCTIONS TO CREATE CHARTS -------------
 
 function createWeightChart(){
   var weightData = {
@@ -90,17 +153,9 @@ function createMoodChart(){
     axisY: {
       offset: 60,
       labelInterpolationFnc: function(value) {
-        if (value == 0) {
-          return 'Sad =('
-        }
-
-        if (value == 1) {
-          return 'Okay :|'
-        }
-
-        if (value == 2) {
-          return 'Happy :)'
-        }
+        if (value == 0) { return 'Sad =(' }
+        if (value == 1) { return 'Okay :|'}
+        if (value == 2) { return 'Happy :)'}
       },
     }
   } ;
