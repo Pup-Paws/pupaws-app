@@ -330,7 +330,7 @@ let dashboardPage = `
 `;
 
 let addReminderPage = `
-
+<h2>Coming soon, keep tuned!</h2>
 `;
 
 let addMoodPage = `
@@ -488,6 +488,24 @@ let journalAddPage = `
 `;
 
 let profilePage = `
-<h1>COMING SOON. KEEP TUNED!</h1>
-<img src="http://placekitten.com/400/400" alt="" />
+<div class="content-wrapper">
+  <div class="owner-info">
+    <img src="https://fillmurray.com/300/300" alt="" class="profile-image"/>
+    <h3>Bill Murray</h3>
+  </div>
+  <div class="dogs-info">
+    <ul>
+      <li>
+        <img src="../images/merlin.jpg" alt="" class="dog-photo"/>
+        <h4>Merlin</h3>
+        <a href="#" class="delete"><i class="fas fa-times"></i></a>
+      </li>
+      <li>
+        <img src="../images/merlin.jpg" alt="" class="dog-photo"/>
+        <h4>Gandalf</h3>
+        <a href="#" class="delete"><i class="fas fa-times"></i></a>
+      </li>
+    </ul>
+  </div>
+</div>
 `;

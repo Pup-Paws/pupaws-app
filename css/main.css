@@ -268,7 +268,7 @@ section.dog-summary-card{
   padding: 0 var(--medium-spacing);
 }
 
-section.dog-summary-card img.dog-photo{
+img.dog-photo, img.profile-image{
   border-radius: 50%;
   width: 30%;
   height: auto;
@@ -378,4 +378,42 @@ input[type="checkbox"] + span:before{
   z-index: 9999;
   right: 10%;
   bottom: 10%;
+}
+
+
+
+/*------------------------ PROFILE    */
+
+.owner-info{
+  text-align: center;
+  border-bottom: 1px solid var(--medium-grey);
+  padding-bottom: var(--medium-spacing);
+}
+
+.dogs-info ul{
+  margin-top: var(--medium-spacing);
+}
+
+.dogs-info ul li{
+  display: flex;
+  flex-flow: row;
+  padding: var(--medium-spacing);
+}
+
+.dogs-info ul li img{
+  width: 30%;
+  align-self: center;
+}
+
+.dogs-info ul li h4{
+  width: 60%;
+  align-self: center;
+  padding: var(--medium-spacing);
+}
+
+.dogs-info ul li a{
+  width: 10%;
+  align-self: center;
+  font-size: 1.5em;
+  color: var(--dark-grey);
 }
