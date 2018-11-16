@@ -6,15 +6,17 @@
   --large-spacing: 50px;
   --light-grey: #EFEFEF;
   --medium-grey: #999999;
+  --dark-grey: #555555;
   --medium-light-grey: #CCCCCC;
   --main-green: #00d4c7b0;
   --dark-green: #009588;
   --super-light-yellow: #fffefc;
+  --
 }
 
 body{
   font-family: 'proxima-nova', helvetica, sans-serif !important;
-  color: #555;
+
   background-color: #fff;
 }
 
@@ -94,7 +96,7 @@ main{
 }
 
 .fixed-footer a {
-  color: var(--medium-light-grey);
+  color: var(--medium-grey);
   font-size: 1.125em;
 }
 
@@ -200,7 +202,7 @@ p{
   text-decoration: none;
 }
 
-.select-gender{
+.select-gender, .select-mood{
   display: flex;
   flex-flow: row;
 }
@@ -211,8 +213,14 @@ p{
   padding-bottom: var(--medium-spacing);
 }
 
+.mood-form-label{
+  width: calc(100% / 3);
+  padding-top: var(--medium-spacing);
+  padding-bottom: var(--medium-spacing);
+}
+
 /* HIDE RADIO */
-input.gender-input[type="radio"] {
+input.gender-input[type="radio"], input.mood-input[type="radio"] {
   position: absolute;
   opacity: 0;
   width: 0;
@@ -220,7 +228,7 @@ input.gender-input[type="radio"] {
 }
 
 /* IMAGE STYLES */
-input.gender-input[type="radio"] + i {
+input.gender-input[type="radio"] + i, input.mood-input[type="radio"] + i {
   cursor: pointer;
   height: auto;
   font-size: 3em;
@@ -228,16 +236,29 @@ input.gender-input[type="radio"] + i {
 }
 
 /* CHECKED STYLES */
-input.gender-input[type="radio"]:checked + i {
+input.gender-input[type="radio"]:checked + i, input.mood-input[type="radio"]:checked + i {
   opacity: 1;
 }
 
+/*------------------------------- DASHBOARD ---------*/
 section.dashboard-section{
   padding: var(--medium-spacing);
   border-bottom: 1px solid var(--medium-light-grey);
 }
 
-/*------------------------------- DASHBOARD ---------*/
+.dashboard-section-header{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--small-spacing);
+}
+
+.dashboard-section-header a{
+  font-size: 1.225em;
+  color: var(--dark-grey);
+}
+
 
 section.dog-summary-card{
   width: 100%;
@@ -290,6 +311,10 @@ li.reminder-item{
 div.checkbox{
   justify-self: end;
 }
+
+div.checkbox label{
+  margin: auto 0;
+}
 input[type="checkbox"] { display:none; } /* to hide the checkbox itself */
 input[type="checkbox"] + span:before {
   font-family: 'Font Awesome 5 Free';
@@ -310,9 +335,9 @@ input[type="checkbox"] + span:before{
   font-weight: normal;
 }
 
-.dashboard-chart{
+/*.dashboard-chart{
   margin-top: var(--medium-spacing);
-}
+}*/
 
 .ct-series-a .ct-line, .ct-series-a .ct-point {
   stroke: var(--dark-green);

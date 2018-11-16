@@ -263,7 +263,11 @@ let dashboardPage = `
 </section>
 
 <section class="dashboard-section reminders-section">
-  <h4>Reminders</h4>
+  <div class="dashboard-section-header">
+      <h4>Reminders</h4>
+      <a href="/addreminder"><i class="fas fa-plus"></i></a>
+  </div>
+
   <ul class="reminders-list">
     <li class="reminder-item">
       <p class="reminder-date">3 days ago</p>
@@ -299,7 +303,10 @@ let dashboardPage = `
 </section>
 
 <section class="dashboard-section weight-history-section">
-  <h4>Weight History</h4>
+  <div class="dashboard-section-header">
+      <h4>Weight History</h4>
+      <a href="/addweight"><i class="fas fa-plus"></i></a>
+  </div>
   <div class="dashboard-chart weight-chart">
     <div class="ct-chart ct-perfect-fourth" id="weight-chart"></div>
   </div>
@@ -309,13 +316,72 @@ let dashboardPage = `
 </section>
 
 <section class="dashboard-section mood-history-section">
-  <h4>Mood History</h4>
+  <div class="dashboard-section-header">
+      <h4>Mood History</h4>
+      <a href="/addmood"><i class="fas fa-plus"></i></a>
+  </div>
   <div class="dashboard-chart mood-chart">
     <div class="ct-chart ct-perfect-fourth" id="mood-chart"></div>
   </div>
   <!-- <div class="see-details">
     <a href="#">See More</a>
   </div> -->
+</section>
+`;
+
+let addReminderPage = `
+
+`;
+
+let addMoodPage = `
+<section class="content-wrapper setup">
+  <div class="setup-content card">
+    <section >
+      <form action="#">
+        <h2>How is Buddy feeling today?</h2>
+        <div class="select-mood">
+          <label class="mood-form-label" for="sad-radio">
+            <input type="radio" id="sad-radio" class="mood-input" name="options" value="sad" checked>
+            <i class="far fa-frown"></i>
+          </label>
+
+          <label class="mood-form-label" for="meh-radio">
+            <input type="radio" id="meh-radio" class="mood-input" name="options" value="meh">
+            <i class="far fa-meh"></i>
+          </label>
+
+          <label class="mood-form-label" for="happy-radio">
+            <input type="radio" id="happy-radio" class="mood-input" name="options" value="happy">
+            <i class="far fa-smile"></i>
+          </label>
+        </div>
+      </form>
+    </section>
+    <div class="setup-actions">
+      <a href="/dashboard" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
+      <a href="/dashboard" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</a>
+    </div>
+  </div>
+</section>
+`;
+
+let addWeightPage = `
+<section class="content-wrapper setup">
+  <div class="setup-content card">
+    <section >
+      <form action="#">
+        <h2>How much is Buddy weighing today?</h2>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="breed-input">
+          <label class="mdl-textfield__label" for="breed-input">Current weight</label>
+        </div>
+      </form>
+    </section>
+    <div class="setup-actions">
+      <a href="/dashboard" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
+      <a href="/dashboard" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</a>
+    </div>
+  </div>
 </section>
 `;
 

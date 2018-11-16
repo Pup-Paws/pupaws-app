@@ -22,6 +22,9 @@ const routes = {
   '/journal': journalPage,
   '/journaladd': journalAddPage,
   '/profile': profilePage,
+  '/addreminder': addReminderPage,
+  '/addweight': addWeightPage,
+  '/addmood': addMoodPage,
   // '/credits': creditPage
   // ADD NEW ROUTES HERE THAT POINT TO VIEWS
 };
