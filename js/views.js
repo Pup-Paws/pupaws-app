@@ -251,14 +251,15 @@ let addDog8Page = `
 `;
 
 let dashboardPage = `
-<div class="content-wrapper">
+<div class="content-wrapper title">
     <h2>Dashboard</h2>
 </div>
-
-<section class="dog-summary-card mdl-card mdl-shadow--2dp">
+<section class="dog-summary-card">
   <img src="images/merlin.jpg" alt="Merlin" class="dog-photo"/>
-  <h3>Merlin</h3>
-  <p class="dog-age">2 years old</p>
+  <div class="dog-info">
+    <p class="dog-name">Merlin</p>
+    <p class="dog-age">2 years old</p>
+  </div>
 </section>
 
 <section class="dashboard-section reminders-section">
@@ -299,7 +300,7 @@ let dashboardPage = `
 
 <section class="dashboard-section weight-history-section">
   <h4>Weight History</h4>
-  <div class="weight-chart">
+  <div class="dashboard-chart weight-chart">
     <div class="ct-chart ct-perfect-fourth" id="weight-chart"></div>
   </div>
   <!-- <div class="see-details">
@@ -309,7 +310,7 @@ let dashboardPage = `
 
 <section class="dashboard-section mood-history-section">
   <h4>Mood History</h4>
-  <div class="mood-chart">
+  <div class="dashboard-chart mood-chart">
     <div class="ct-chart ct-perfect-fourth" id="mood-chart"></div>
   </div>
   <!-- <div class="see-details">

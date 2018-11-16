@@ -6,7 +6,7 @@
   --large-spacing: 50px;
   --light-grey: #EFEFEF;
   --medium-grey: #999999;
-  --medium-light-grey: #686868;
+  --medium-light-grey: #CCCCCC;
   --main-green: #00d4c7b0;
   --dark-green: #009588;
   --super-light-yellow: #fffefc;
@@ -14,7 +14,7 @@
 
 body{
   font-family: 'proxima-nova', helvetica, sans-serif !important;
-  color: #333;
+  color: #555;
   background-color: #fff;
 }
 
@@ -44,13 +44,14 @@ h1{
 }
 
 h2{
-  font-size: 1.225em;
-  line-height: 1.225em;
+  font-size: 1.5em;
+  line-height: 1.5em;
   font-weight: bold;
+
 }
 
 h3{
-  font-size: 1.125em;
+  font-size: 1.225em;
   font-weight: bold;
 }
 
@@ -233,33 +234,52 @@ input.gender-input[type="radio"]:checked + i {
 
 section.dashboard-section{
   padding: var(--medium-spacing);
+  border-bottom: 1px solid var(--medium-light-grey);
 }
-
-
 
 /*------------------------------- DASHBOARD ---------*/
 
 section.dog-summary-card{
-  width: 70%;
-  margin: var(--small-spacing) auto;
+  width: 100%;
   text-align: center;
-  padding: var(--medium-spacing);
+  display: flex;
+  flex-flow: column;
+  padding: 0 var(--medium-spacing);
 }
 
 section.dog-summary-card img.dog-photo{
   border-radius: 50%;
-  width: 50%;
+  width: 30%;
   height: auto;
   margin: 0 auto 0 auto;
+  -webkit-box-shadow: 0px 0px 43px -5px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 43px -5px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 43px -5px rgba(0,0,0,0.5);
+  align-self: center;
+}
+
+section.dog-summary-card .dog-info{
+  width: 100%;
+  align-self: center;
+  /*text-align: left;*/
+  padding: var(--medium-spacing) var(--medium-spacing) 0 var(--medium-spacing);
+  padding: var(--medium-spacing);
+  border-bottom: 1px solid var(--medium-light-grey);
 }
 
 section.dog-summary-card h3{
-  color: var(--main-green);
+  /*color: var(--main-green);*/
 }
 
 section.dog-summary-card p{
   text-transform: uppercase;
 }
+
+section.dog-summary-card p.dog-name{
+  font-weight: bold;
+}
+
+
 
 li.reminder-item{
   display: grid;
@@ -288,6 +308,10 @@ input[type="checkbox"]:checked + span:before{
 input[type="checkbox"] + span:before{
   content: "\f14a";
   font-weight: normal;
+}
+
+.dashboard-chart{
+  margin-top: var(--medium-spacing);
 }
 
 .ct-series-a .ct-line, .ct-series-a .ct-point {
