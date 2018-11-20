@@ -52,6 +52,8 @@ document.getElementById('page').addEventListener('page', function (e) {
     createMoodChart();
   }
 
+  componentHandler.upgradeDom();
+
   if (currPage == '/todolist') {
     // Find the main task list
     var taskList = document.getElementById('taskList');
