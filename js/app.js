@@ -65,7 +65,7 @@ var mood_history = [
 ]
 
 var reminders = [
-  {id: 1, title: "Bravecto", date: {y:2018, m:10, d:1}, status: 0 },
+  {id: 1, title: "Bravecto", date: {y:2018, m:10, d:1}, status: 0, dog_id: 1 },
   // TASK: CREATE MORE SAMPLE REMINDERS HERE
 ]
 
@@ -110,37 +110,54 @@ document.getElementById('page').addEventListener('page', function (e) {
   // If the current page is the todoListPage, grab the data for it
   // This needs some improvement
 
+  componentHandler.upgradeDom();
+
   if(currPage == '/dashboard'){
+    populateReminders();
     createWeightChart();
     createMoodChart();
   }
+  else if (currPage == '/addDog1Page') {
 
-  else if (currPage == '/todolist') {
-    componentHandler.upgradeDom();
+  } else if (currPage == '/addDog2Page') {
 
-    // Find the main task list
-    var taskList = document.getElementById('taskList');
-    // For each task, call createTask and join them all together with a linebreak between
-    var _reminder = reminder.filter(function(task) {return task.dog_id == current_dog_id;});
-    taskList.innerHTML = _reminder.map(makeReminder).join('\n');
+  } else if (currPage == '/addDog3Page') {
 
+  } else if (currPage == '/addDog4Page') {
 
-    // Now setup the click listener on the button to add a new task
-    document.getElementById('addtask').addEventListener('click', function() {
-      // Create a new task based on the user's input value (this is ugly)
-      var newTask = {name:document.getElementById('newtask').value, complete:0};
-      // Add to our "dataset"
-      tasks.push(newTask);
-      // createTask creates a new task
-      taskList.innerHTML += createTask(newTask);
+  } else if (currPage == '/addDog5Page') {
 
-      // Could also trigger a refresh when the task data is changed (then task data should be a class!!)
-    });
-  }
+  } else if (currPage == '/addDog6Page') {
+
+  } else if (currPage == '/addDog7Page') {
+
+  } else if (currPage == '/addReminderPage') {
+
+  } else if (currPage == '/addWeightPage') {
+
+  } else if (currPage == '/journalAddPage') {
 
 
 
+
+
+    // // Now setup the click listener on the button to add a new task
+    // document.getElementById('addtask').addEventListener('click', function() {
+    //   // Create a new task based on the user's input value (this is ugly)
+    //   var newTask = {name:document.getElementById('newtask').value, complete:0};
+    //   // Add to our "dataset"
+    //   tasks.push(newTask);
+    //   // createTask creates a new task
+    //   taskList.innerHTML += createTask(newTask);
+    //   // Could also trigger a refresh when the task data is changed (then task data should be a class!!)
+    // });
 }, false);
+
+function populateReminders(){
+  var remindersList = document.getElementById('reminders-list');
+  var _reminders = reminders.filter(function(reminder) {return reminder.dog_id == current_dog_id;});
+  remindersList.innerHTML = _reminders.map(makeReminder).join('\n');
+}
 
 
 // ------------------------------- FUNCTIONS TO CREATE CHARTS -------------

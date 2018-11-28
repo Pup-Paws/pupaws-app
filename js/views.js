@@ -268,7 +268,7 @@ let dashboardPage = `
       <a href="/addreminder"><i class="fas fa-plus"></i></a>
   </div>
 
-  <ul class="reminders-list">
+  <ul class="reminders-list" id="reminders-list">
     <!-- <li class="reminder-item">
       <p class="reminder-date">3 days ago</p>
       <p class="reminder-description">Give Merlin the Heartgard pill</p>
