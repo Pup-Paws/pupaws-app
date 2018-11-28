@@ -66,6 +66,11 @@ var mood_history = [
 
 var reminders = [
   {id: 1, title: "Bravecto", date: {y:2018, m:10, d:1}, status: 0 },
+  {id: 2, title: "Heart Guard", date: {y:2018, m:10, d:3}, status: 0 },
+  {id: 3, title: "Vet Appointment", date: {y:2018, m:10, d:5}, status: 0 },
+  {id: 4, title: "Clean Ears", date: {y:2018, m:10, d:7}, status: 0 },
+  {id: 5, title: "Dewormer", date: {y:2018, m:10, d:1}, status: 0 },
+  {id: 6, title: "Grooming", date: {y:2018, m:10, d:6}, status: 0 },
   // TASK: CREATE MORE SAMPLE REMINDERS HERE
 ]
 
