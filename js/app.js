@@ -45,7 +45,7 @@ var moods = ["Sad =(", "Okay :|", "Happy :)"];
 
 var dog = [
   {id: 1, name: "Merlin", breed: "Chihuahua x Jack Russel", date: {y:2018, m:10, d:1}, gender: "Male", photo: "dog1.jpg"},
-  // TASK: CREATE MORE DOGS HERE
+  {id: 2, name: "Charles Barkly", breed: "American Bulldog", date: {y:2016, m:04, d:29}, gender: "Female", photo: "dog2.jpg"},
 ];
 
 var weight_history = [
@@ -82,9 +82,43 @@ var activities_history = [
     photo: "image1.jpg",
     date: {y:2018, m:10, d:1},
     status: 0,
-    mood_history_id: 2
+    mood_history_id: 2,
+    dog_id:1,
   },
-  // TASK: CREATE MORE SAMPLE ACTIVITIES HERE
+
+  {
+    id: 2,
+    title: "Visited Grandma",
+    description: "Charles was really calm but, happy to see grandma",
+    photo: "image1.jpg",
+    date: {y:2018, m:10, d:1},
+    status: 0,
+    mood_history_id: 2,
+    dog_id:2,
+  },
+
+  {
+    id: 3,
+    title: "Dog Park Vist",
+    description: "Played in the park with both Charles and Merlin",
+    photo: "image1.jpg",
+    date: {y:2018, m:10, d:1},
+    status: 0,
+    mood_history_id: 2,
+    dog_id:1, 2,
+  },
+
+  {
+    id: 4,
+    title: "Morning Run in Snow",
+    description: "Charles was not happy in the snow",
+    photo: "image1.jpg",
+    date: {y:2018, m:10, d:1},
+    status: 0,
+    mood_history_id: 0,
+    dog_id:2,
+  }
+  
 ]
 
 
