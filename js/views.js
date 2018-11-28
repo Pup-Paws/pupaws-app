@@ -269,7 +269,7 @@ let dashboardPage = `
   </div>
 
   <ul class="reminders-list">
-    <li class="reminder-item">
+    <!-- <li class="reminder-item">
       <p class="reminder-date">3 days ago</p>
       <p class="reminder-description">Give Merlin the Heartgard pill</p>
       <div class="checkbox">
@@ -298,7 +298,7 @@ let dashboardPage = `
           <span></span>
         </label>
       </div>
-    </li>
+    </li> -->
   </ul>
 </section>
 
@@ -328,6 +328,8 @@ let dashboardPage = `
   </div> -->
 </section>
 `;
+
+
 
 let addReminderPage = `
 <h2>Coming soon, keep tuned!</h2>

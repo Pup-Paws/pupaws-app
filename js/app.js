@@ -39,6 +39,69 @@ var tasks = [
 ];
 // Improvements: Tasks should be an Object
 
+var current_dog_id = 1;
+
+var moods = ["Sad =(", "Okay :|", "Happy :)"];
+
+var dog = [
+  {id: 1, name: "Merlin", breed: "Chihuahua x Jack Russel", date: {y:2018, m:10, d:1}, gender: "Male", photo: "dog1.jpg"},
+  // TASK: CREATE MORE DOGS HERE
+];
+
+var weight_history = [
+  {id: 1, weight: 12.5, date: {y:2018, m:10, d:1} },
+  {id: 2, weight: 12.8, date: {y:2018, m:10, d:8} },
+  {id: 3, weight: 13, date: {y:2018, m:10, d:15} },
+  {id: 4, weight: 13.5, date: {y:2018, m:10, d:22} },
+  {id: 5, weight: 12.6, date: {y:2018, m:10, d:29} }
+]
+
+var mood_history = [
+  {id: 1, mood_id: 0, date: {y:2018, m:10, d:1} },
+  {id: 2, mood_id: 1, date: {y:2018, m:10, d:8} },
+  {id: 3, mood_id: 1, date: {y:2018, m:10, d:15} },
+  {id: 4, mood_id: 2, date: {y:2018, m:10, d:22} },
+  {id: 5, mood_id: 1, date: {y:2018, m:10, d:29} }
+]
+
+var reminders = [
+  {id: 1, title: "Bravecto", date: {y:2018, m:10, d:1}, status: 0 },
+  // TASK: CREATE MORE SAMPLE REMINDERS HERE
+]
+
+var activities_history = [
+  {
+    id: 1,
+    title: "Afternoon jog",
+    description: "It was a nice jog in the park!",
+    photo: "image1.jpg",
+    date: {y:2018, m:10, d:1},
+    status: 0,
+    mood_history_id: 2
+  },
+  // TASK: CREATE MORE SAMPLE ACTIVITIES HERE
+]
+
+
+
+// CREATE FUNCTIONS FOR THINGS THAT REPEAT ON SCREEN: ACTIVITIES & REMINDERS
+
+function makeReminder(reminder) {
+  // For now, use a standard date format. But later we can use moment.js
+
+  return `
+    <li class="reminder-item">
+      <p class="reminder-date">${reminder.date.y}-${reminder.date.m}-${reminder.date.d}</p>
+      <p class="reminder-description">Give Merlin the Heartgard pill</p>
+      <div class="checkbox">
+        <label for="checkbox-done1">
+          <input id="checkbox-done1" type="checkbox" class="checkbox-done" />
+          <span></span>
+        </label>
+      </div>
+    </li>`;
+}
+
 
 
 // DATA UPDATER:
@@ -52,13 +115,15 @@ document.getElementById('page').addEventListener('page', function (e) {
     createMoodChart();
   }
 
-  componentHandler.upgradeDom();
+  else if (currPage == '/todolist') {
+    componentHandler.upgradeDom();
 
-  if (currPage == '/todolist') {
     // Find the main task list
     var taskList = document.getElementById('taskList');
     // For each task, call createTask and join them all together with a linebreak between
-    taskList.innerHTML = tasks.map(createTask).join('\n');
+    var _reminder = reminder.filter(function(task) {return task.dog_id == current_dog_id;});
+    taskList.innerHTML = _reminder.map(makeReminder).join('\n');
+
 
     // Now setup the click listener on the button to add a new task
     document.getElementById('addtask').addEventListener('click', function() {
@@ -72,52 +137,10 @@ document.getElementById('page').addEventListener('page', function (e) {
       // Could also trigger a refresh when the task data is changed (then task data should be a class!!)
     });
   }
+
+
+
 }, false);
-
-
-// -------------------------------------- OLD CODE
-
-// // Functions for each chunk of repeating data
-// function createTask(task) {
-//   return `<li class="task">${task.name}</li>`;
-// }
-//
-// // On load of the application
-// window.addEventListener('load', (e) => {
-//   // Draw the first page
-//   drawPage();
-//
-//   // If we hit our history button, redraw the page
-//   window.addEventListener('popstate', event => {
-//     drawPage();
-//   });
-//
-//   // If we clich an Anchor (<a>) in HTML, route to it's HREF value without reloading
-//   document.addEventListener('click', (e) => {
-//     if (e.target.nodeName == 'A') {
-//       e.preventDefault();
-//       history.pushState(null, '', e.target.pathname);
-//       drawPage();
-//     }
-//   })
-//
-//   createWeightChart();
-//   createMoodChart();
-// });
-//
-// function drawPage() {
-//   pageContent.innerHTML = routes[window.location.pathname];
-// }
-
-
-
-
-
-
-
-
-
-
 
 
 // ------------------------------- FUNCTIONS TO CREATE CHARTS -------------

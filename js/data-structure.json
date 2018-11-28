@@ -34,7 +34,7 @@
 {
   "mood_history": {
     "id": 1,
-    "title": "Happy"
+    "mood": 2
   }
 },
 
@@ -43,7 +43,7 @@
     "id": 1,
     "title": "Afternoon jog",
     "description": "It was a nice jog in the park!",
-    "photo": "/image1.jpg",
+    "photo": "image1.jpg",
     "date": "2018-11-15",
     "mood_id" : 1
   }
