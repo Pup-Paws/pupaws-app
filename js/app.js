@@ -65,13 +65,12 @@ var mood_history = [
 ]
 
 var reminders = [
-  {id: 1, title: "Bravecto", date: {y:2018, m:10, d:1}, status: 0, dog_id: 1  },
-  {id: 2, title: "Heart Guard", date: {y:2018, m:10, d:3}, status: 0, dog_id: 1  },
+  {id: 1, title: "Bravecto", date: {y:2018, m:10, d:01}, status: 0, dog_id: 1  },
+  {id: 2, title: "Heart Guard", date: {y:2018, m:10, d:03}, status: 0, dog_id: 1  },
   {id: 3, title: "Vet Appointment", date: {y:2018, m:10, d:5}, status: 0, dog_id: 1  },
-  {id: 4, title: "Clean Ears", date: {y:2018, m:10, d:7}, status: 0, dog_id: 1  },
-  {id: 5, title: "Dewormer", date: {y:2018, m:10, d:1}, status: 0, dog_id: 1  },
-  {id: 6, title: "Grooming", date: {y:2018, m:10, d:6}, status: 0, dog_id: 1  },
-  // TASK: CREATE MORE SAMPLE REMINDERS HERE
+  {id: 4, title: "Clean Ears", date: {y:2018, m:10, d:07}, status: 0, dog_id: 1  },
+  {id: 5, title: "Dewormer", date: {y:2018, m:10, d:01}, status: 0, dog_id: 1  },
+  {id: 6, title: "Grooming", date: {y:2018, m:10, d:06}, status: 0, dog_id: 1  },
 ]
 
 var activities_history = [
@@ -105,7 +104,7 @@ var activities_history = [
     date: {y:2018, m:10, d:1},
     status: 0,
     mood_history_id: 2,
-    dog_id:1, 2,
+    dog_id:1,
   },
 
   {
@@ -121,8 +120,6 @@ var activities_history = [
 
 ]
 
-
-
 // CREATE FUNCTIONS FOR THINGS THAT REPEAT ON SCREEN: ACTIVITIES & REMINDERS
 
 function makeReminder(reminder) {
@@ -131,10 +128,10 @@ function makeReminder(reminder) {
   return `
     <li class="reminder-item">
       <p class="reminder-date">${reminder.date.y}-${reminder.date.m}-${reminder.date.d}</p>
-      <p class="reminder-description">Give Merlin the Heartgard pill</p>
+      <p class="reminder-description">${reminder.title}</p>
       <div class="checkbox">
-        <label for="checkbox-done1">
-          <input id="checkbox-done1" type="checkbox" class="checkbox-done" />
+        <label for="checkbox-done${reminder.id}">
+          <input id="checkbox-done${reminder.id}" type="checkbox" class="checkbox-done" />
           <span></span>
         </label>
       </div>
@@ -176,20 +173,7 @@ document.getElementById('page').addEventListener('page', function (e) {
 
   } else if (currPage == '/journalAddPage') {
 
-
-
-
-
-    // // Now setup the click listener on the button to add a new task
-    // document.getElementById('addtask').addEventListener('click', function() {
-    //   // Create a new task based on the user's input value (this is ugly)
-    //   var newTask = {name:document.getElementById('newtask').value, complete:0};
-    //   // Add to our "dataset"
-    //   tasks.push(newTask);
-    //   // createTask creates a new task
-    //   taskList.innerHTML += createTask(newTask);
-    //   // Could also trigger a refresh when the task data is changed (then task data should be a class!!)
-    // });
+  }
 }, false);
 
 function populateReminders(){
