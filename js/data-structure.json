@@ -1,0 +1,81 @@
+[{
+  "owner": {
+    "id": 1,
+    "first_name": "Bill",
+    "last_name": "Murray"
+  }
+},
+
+{
+  "dog": {
+    "id": 1,
+    "name": "Merlin",
+    "breed": "Chihuahua x Jack Russel",
+    "dob": "2016-07-14",
+    "gender": 1
+  }
+},
+
+{
+  "gender": {
+    "id": 1,
+    "name": "Male"
+  }
+},
+
+{
+  "weight_history": {
+    "id": 1,
+    "weight": 14.5,
+    "date": "2018-11-01"
+  }
+},
+
+{
+  "mood_history": {
+    "id": 1,
+    "title": "Happy"
+  }
+},
+
+{
+  "activities_history": {
+    "id": 1,
+    "title": "Afternoon jog",
+    "description": "It was a nice jog in the park!",
+    "photo": "/image1.jpg",
+    "date": "2018-11-15",
+    "mood_id" : 1
+  }
+},
+
+{
+  "food": {
+    "id": 1,
+    "name": "Iron Will Raw",
+    "number_daily_servings": 2,
+    "grams_per_serving": 100,
+    "date": "2018-11-15",
+    "mood_id" : 1
+  }
+},
+
+{
+  "medication": {
+    "id": 1,
+    "name": "Heartgard",
+    "number_of_times": 1,
+    "frequency_number": 2,
+    "frequency": "months",
+    "dosage": "1 pill"
+  }
+},
+
+{
+  "medication": {
+    "id": 1,
+    "title": "Remember to brush!",
+    "status": 0,
+    "date": "2018-12-01"
+  }
+}]
