@@ -33,6 +33,8 @@ const routes = {
 // Temporary data, replace with cached data:
 // https://developers.google.com/web/ilt/pwa/live-data-in-the-service-worker
 // https://github.com/jakearchibald/idb (https://www.npmjs.com/package/idb)
+
+var previousMonth = 0;
 var tasks = [
   {name:"Feed the dog", complete:0},
   {name:"Cut the grass", complete:0}
@@ -140,6 +142,69 @@ function makeReminder(reminder) {
 
 
 
+/* function makeActivity(activity, index){
+  if(activity.date.m != previousMonth){
+    activityElement = `
+    <li class="monthly-entries">
+      <div class="month-title">
+        <h3>${activity.date.m}</h3>
+      </div>
+      <div class="activities-list">
+        <ul>`;
+    activityElement += `
+          <li class="activity-entry">
+            <div class="entry-photo">
+              <img src="http://placekitten.com/70/70" alt="">
+            </div>
+            <div class="entry-text">
+              <h4 class="date">${activity.date.y}-${activity.date.m}-${activity.date.d}</h4>
+              <p class="title">${activity.title}</p>
+              <p class="description">${activity.description}</p>
+            </div>
+          </li>`;
+    activityElement += `
+          </ul>
+        </div>
+      </li>
+    `;
+    previousMonth = activity.date.m;
+  } else {
+    <li class="activity-entry">
+      <div class="entry-photo">
+        <img src="http://placekitten.com/70/70" alt="">
+      </div>
+      <div class="entry-text">
+        <h4 class="date">${activity.date.y}-${activity.date.m}-${activity.date.d}</h4>
+        <p class="title">${activity.title}</p>
+        <p class="description">${activity.description}</p>
+      </div>
+    </li>
+  }
+  activityElement = `
+  <li class="monthly-entries">
+    <div class="month-title">
+      <h3>${activity.date.m}</h3>
+    </div>
+    <div class="activities-list">
+      <ul>
+        <li class="activity-entry">
+          <div class="entry-photo">
+            <img src="http://placekitten.com/70/70" alt="">
+          </div>
+          <div class="entry-text">
+            <h4 class="date">${activity.date.y}-${activity.date.m}-${activity.date.d}</h4>
+            <p class="title">${activity.title}</p>
+            <p class="description">${activity.description}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li>`
+  return activityElement;
+}*/
+
+
+
 // DATA UPDATER:
 // Fires every time a page changes
 document.getElementById('page').addEventListener('page', function (e) {
@@ -153,7 +218,8 @@ document.getElementById('page').addEventListener('page', function (e) {
     createWeightChart();
     createMoodChart();
   }
-  else if (currPage == '/addDog1Page') {
+  else if (currPage == '/journal') {
+    populateJournal();
 
   } else if (currPage == '/addDog2Page') {
 
@@ -182,16 +248,23 @@ function populateReminders(){
   remindersList.innerHTML = _reminders.map(makeReminder).join('\n');
 }
 
+function populateJournal(){
+  var journalList = document.getElementById('journal-list');
+  var _activities_history = activities_history.filter(function(activity) {return activity.dog_id == current_dog_id;});
+  journalList.innerHTML = _activities_history.map(makeActivity).join('\n');
+}
+
 
 // ------------------------------- FUNCTIONS TO CREATE CHARTS -------------
 
 function createWeightChart(){
+  var _weightEntries = weight_history.map(weight_entry => weight_entry.weight);
+  var _weightDates = weight_history.map(weight_entry => `${weight_entry.date.d}-${weight_entry.date.m}`);
+
   var weightData = {
-    // A labels array that can contain any sort of values
-    labels: ['Oct 1', 'Oct 8', 'Oct 15', 'Oct 22', 'Oct 29'],
-    // Our series array that contains series objects or in this case series data arrays
+    labels: _weightDates,
     series: [
-      [12.5, 12.8, 13, 13.4, 14]
+      _weightEntries
     ]
   };
 
@@ -208,12 +281,13 @@ function createWeightChart(){
 }
 
 function createMoodChart(){
+  var _moodEntries = mood_history.map(mood_entry => mood_entry.mood_id);
+  var _moodDates = mood_history.map(mood_entry => `${mood_entry.date.d}-${mood_entry.date.m}`);
+
   var moodData = {
-    // A labels array that can contain any sort of values
-    labels: ['Oct 1', 'Oct 8', 'Oct 15', 'Oct 22', 'Oct 29'],
-    // Our series array that contains series objects or in this case series data arrays
+    labels: _moodDates,
     series: [
-      [2, 0, 1, 1, 2]
+      _moodEntries
     ]
   };
 
