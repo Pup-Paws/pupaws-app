@@ -388,81 +388,83 @@ let addWeightPage = `
 `;
 
 let journalPage = `
-<ul class="journal-list">
-  <li class="monthly-entries">
-    <div class="month-title">
-      <h3>October</h3>
-    </div>
-    <div class="activities-list">
-      <ul>
-        <li class="activity-entry">
-          <div class="entry-photo">
-            <img src="http://placekitten.com/70/70" alt="">
-          </div>
-          <div class="entry-text">
-            <h4 class="date">October 21, 2018</h4>
-            <p class="title">Very Energetic!</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </div>
-        </li>
-        <li class="activity-entry">
-          <div class="entry-photo">
-            <img src="http://placekitten.com/70/70" alt="">
-          </div>
-          <div class="entry-text">
-            <h4 class="date">October 20, 2018</h4>
-            <p class="title">Very Energetic!</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </li>
-  <li class="monthly-entries">
-    <div class="month-title">
-      <h3>September</h3>
-    </div>
-    <div class="activities-list">
-      <ul>
-        <li class="activity-entry">
-          <div class="entry-photo">
-            <img src="http://placekitten.com/70/70" alt="">
-          </div>
-          <div class="entry-text">
-            <h4 class="date">September 09, 2018</h4>
-            <p class="title">Lorem Ipsum</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </li>
-  <li class="monthly-entries">
-    <div class="month-title">
-      <h3>August</h3>
-    </div>
-    <div class="activities-list">
-      <ul>
-        <li class="activity-entry">
-          <div class="entry-photo">
-            <img src="http://placekitten.com/70/70" alt="">
-          </div>
-          <div class="entry-text">
-            <h4 class="date">August 09, 2018</h4>
-            <p class="title">Lorem Ipsum</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </li>
-</ul>
+<div class="journal-list" id="journal-list">
+
+</div>
 <div class="action-add-button">
   <a href="/journaladd" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
     <i class="material-icons">add</i>
   </a>
 </div>
 `;
+
+/* <section class="monthly-entries">
+   <div class="month-title">
+    <h3>October</h3>
+  </div>
+  <div class="activities-list">
+    <ul>
+      <li class="activity-entry">
+        <div class="entry-photo">
+          <img src="http://placekitten.com/70/70" alt="">
+        </div>
+        <div class="entry-text">
+          <h4 class="date">October 21, 2018</h4>
+          <p class="title">Very Energetic!</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </li>
+      <li class="activity-entry">
+        <div class="entry-photo">
+          <img src="http://placekitten.com/70/70" alt="">
+        </div>
+        <div class="entry-text">
+          <h4 class="date">October 20, 2018</h4>
+          <p class="title">Very Energetic!</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="monthly-entries">
+  <div class="month-title">
+    <h3>September</h3>
+  </div>
+  <div class="activities-list">
+    <ul>
+      <li class="activity-entry">
+        <div class="entry-photo">
+          <img src="http://placekitten.com/70/70" alt="">
+        </div>
+        <div class="entry-text">
+          <h4 class="date">September 09, 2018</h4>
+          <p class="title">Lorem Ipsum</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="monthly-entries">
+  <div class="month-title">
+    <h3>August</h3>
+  </div>
+  <div class="activities-list">
+    <ul>
+      <li class="activity-entry">
+        <div class="entry-photo">
+          <img src="http://placekitten.com/70/70" alt="">
+        </div>
+        <div class="entry-text">
+          <h4 class="date">August 09, 2018</h4>
+          <p class="title">Lorem Ipsum</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section> */
 
 
 let journalAddPage = `

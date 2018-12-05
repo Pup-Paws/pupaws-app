@@ -344,7 +344,7 @@ input[type="checkbox"] + span:before{
 }
 
 /*-------------------- JOURNAL ------*/
-.journal-list h3{
+section.monthly-entries h3{
   margin: 0;
   padding: var(--tiny-spacing);
   text-align: center;

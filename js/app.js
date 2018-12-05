@@ -95,7 +95,7 @@ var activities_history = [
     date: {y:2018, m:10, d:1},
     status: 0,
     mood_history_id: 2,
-    dog_id:2,
+    dog_id:1,
   },
 
   {
@@ -117,92 +117,45 @@ var activities_history = [
     date: {y:2018, m:10, d:1},
     status: 0,
     mood_history_id: 0,
-    dog_id:2,
+    dog_id:1,
+  },
+
+  {
+    id: 5,
+    title: "Morning Run in Snow",
+    description: "Charles was not happy in the snow",
+    photo: "image1.jpg",
+    date: {y:2018, m:9, d:1},
+    status: 0,
+    mood_history_id: 0,
+    dog_id:1,
+  },
+
+  {
+    id: 5,
+    title: "Morning Run in Snow",
+    description: "Charles was not happy in the snow",
+    photo: "image1.jpg",
+    date: {y:2018, m:8, d:1},
+    status: 0,
+    mood_history_id: 0,
+    dog_id:1,
+  },
+
+  {
+    id: 5,
+    title: "Morning Run in Snow",
+    description: "Charles was not happy in the snow",
+    photo: "image1.jpg",
+    date: {y:2018, m:8, d:1},
+    status: 0,
+    mood_history_id: 0,
+    dog_id:1,
   }
 
 ]
 
 // CREATE FUNCTIONS FOR THINGS THAT REPEAT ON SCREEN: ACTIVITIES & REMINDERS
-
-function makeReminder(reminder) {
-  // For now, use a standard date format. But later we can use moment.js
-
-  return `
-    <li class="reminder-item">
-      <p class="reminder-date">${reminder.date.y}-${reminder.date.m}-${reminder.date.d}</p>
-      <p class="reminder-description">${reminder.title}</p>
-      <div class="checkbox">
-        <label for="checkbox-done${reminder.id}">
-          <input id="checkbox-done${reminder.id}" type="checkbox" class="checkbox-done" />
-          <span></span>
-        </label>
-      </div>
-    </li>`;
-}
-
-
-
-/* function makeActivity(activity, index){
-  if(activity.date.m != previousMonth){
-    activityElement = `
-    <li class="monthly-entries">
-      <div class="month-title">
-        <h3>${activity.date.m}</h3>
-      </div>
-      <div class="activities-list">
-        <ul>`;
-    activityElement += `
-          <li class="activity-entry">
-            <div class="entry-photo">
-              <img src="http://placekitten.com/70/70" alt="">
-            </div>
-            <div class="entry-text">
-              <h4 class="date">${activity.date.y}-${activity.date.m}-${activity.date.d}</h4>
-              <p class="title">${activity.title}</p>
-              <p class="description">${activity.description}</p>
-            </div>
-          </li>`;
-    activityElement += `
-          </ul>
-        </div>
-      </li>
-    `;
-    previousMonth = activity.date.m;
-  } else {
-    <li class="activity-entry">
-      <div class="entry-photo">
-        <img src="http://placekitten.com/70/70" alt="">
-      </div>
-      <div class="entry-text">
-        <h4 class="date">${activity.date.y}-${activity.date.m}-${activity.date.d}</h4>
-        <p class="title">${activity.title}</p>
-        <p class="description">${activity.description}</p>
-      </div>
-    </li>
-  }
-  activityElement = `
-  <li class="monthly-entries">
-    <div class="month-title">
-      <h3>${activity.date.m}</h3>
-    </div>
-    <div class="activities-list">
-      <ul>
-        <li class="activity-entry">
-          <div class="entry-photo">
-            <img src="http://placekitten.com/70/70" alt="">
-          </div>
-          <div class="entry-text">
-            <h4 class="date">${activity.date.y}-${activity.date.m}-${activity.date.d}</h4>
-            <p class="title">${activity.title}</p>
-            <p class="description">${activity.description}</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </li>`
-  return activityElement;
-}*/
-
 
 
 // DATA UPDATER:
@@ -251,12 +204,46 @@ function populateReminders(){
 function populateJournal(){
   var journalList = document.getElementById('journal-list');
   var _activities_history = activities_history.filter(function(activity) {return activity.dog_id == current_dog_id;});
-  journalList.innerHTML = _activities_history.map(makeActivity).join('\n');
+
+  var activitiesHTML = `<div class="activities-list"><ul>`;
+  activitiesHTML += _activities_history.map(makeActivityItem).join('\n');
+  activitiesHTML += `</ul></div>`;
+  journalList.innerHTML = activitiesHTML;
+}
+
+function makeActivityItem(activity, index){
+  activityListItem = `<li class="activity-entry">
+    <div class="entry-photo">
+      <img src="../images/dogs/${activity.dog_id}/${activity.photo}" alt="">
+    </div>
+    <div class="entry-text">
+      <h4 class="date">${activity.date.y}-${activity.date.m}-${activity.date.d}</h4>
+      <p class="title">${activity.title}</p>
+      <p class="description">${activity.description}</p>
+    </div>
+  </li>`;
+
+  return activityListItem;
 }
 
 
-// ------------------------------- FUNCTIONS TO CREATE CHARTS -------------
+function makeReminder(reminder) {
+  // For now, use a standard date format. But later we can use moment.js
 
+  return `
+    <li class="reminder-item">
+      <p class="reminder-date">${reminder.date.y}-${reminder.date.m}-${reminder.date.d}</p>
+      <p class="reminder-description">${reminder.title}</p>
+      <div class="checkbox">
+        <label for="checkbox-done${reminder.id}">
+          <input id="checkbox-done${reminder.id}" type="checkbox" class="checkbox-done" />
+          <span></span>
+        </label>
+      </div>
+    </li>`;
+}
+
+// ------------------------------- FUNCTIONS TO CREATE CHARTS -------------
 function createWeightChart(){
   var _weightEntries = weight_history.map(weight_entry => weight_entry.weight);
   var _weightDates = weight_history.map(weight_entry => `${weight_entry.date.d}-${weight_entry.date.m}`);
