@@ -329,12 +329,6 @@ let dashboardPage = `
 </section>
 `;
 
-
-
-let addReminderPage = `
-<h2>Coming soon, keep tuned!</h2>
-`;
-
 let addMoodPage = `
 <section class="content-wrapper setup">
   <div class="setup-content card">
@@ -386,6 +380,43 @@ let addWeightPage = `
   </div>
 </section>
 `;
+
+let addReminderPage = `
+<section class="content-wrapper setup">
+  <div class="setup-content card">
+    <section >
+      <form action="#">
+        <h2>What do you want to be reminded of?</h2>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="first-name-input">
+          <label class="mdl-textfield__label" for="first-name-input">Reminder description</label>
+        </div>
+
+        <h2>When do you want to be reminded?</h2>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="day-input">
+          <label class="mdl-textfield__label" for="day-input">DD</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="month-input">
+          <label class="mdl-textfield__label" for="month-input">MM</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="year-input">
+          <label class="mdl-textfield__label" for="year-input">YYYY</label>
+        </div>
+      </form>
+    </section>
+    <div class="setup-actions">
+      <a href="/dashboard" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
+      <a href="/dashboard" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</a>
+    </div>
+  </div>
+</section>
+`;
+
 
 let journalPage = `
 <div class="journal-list" id="journal-list">
