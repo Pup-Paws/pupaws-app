@@ -385,10 +385,9 @@ let addReminderPage = `
 <section class="content-wrapper setup">
   <div class="setup-content card">
     <section >
-      <form action="#">
         <h2>What do you want to be reminded of?</h2>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="first-name-input">
+          <input class="mdl-textfield__input" type="text" id="reminder-description-input">
           <label class="mdl-textfield__label" for="first-name-input">Reminder description</label>
         </div>
 
@@ -407,11 +406,10 @@ let addReminderPage = `
           <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="year-input">
           <label class="mdl-textfield__label" for="year-input">YYYY</label>
         </div>
-      </form>
     </section>
     <div class="setup-actions">
       <a href="/dashboard" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
-      <a href="/dashboard" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</a>
+      <a href="#" id="addReminderButton" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</a>
     </div>
   </div>
 </section>
@@ -511,6 +509,22 @@ let journalAddPage = `
         <div class="mdl-textfield mdl-js-textfield">
           <textarea class="mdl-textfield__input" type="text" rows= "1" id="sample5" ></textarea>
           <label class="mdl-textfield__label" for="sample5">Description</label>
+        </div>
+        <div class="select-mood">
+          <label class="mood-form-label" for="sad-radio">
+            <input type="radio" id="sad-radio" class="mood-input" name="options" value="sad" checked>
+            <i class="far fa-frown"></i>
+          </label>
+
+          <label class="mood-form-label" for="meh-radio">
+            <input type="radio" id="meh-radio" class="mood-input" name="options" value="meh">
+            <i class="far fa-meh"></i>
+          </label>
+
+          <label class="mood-form-label" for="happy-radio">
+            <input type="radio" id="happy-radio" class="mood-input" name="options" value="happy">
+            <i class="far fa-smile"></i>
+          </label>
         </div>
       </form>
     </section>

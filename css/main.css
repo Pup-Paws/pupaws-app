@@ -351,6 +351,12 @@ section.monthly-entries h3{
   background-color: var(--light-grey);
 }
 
+section.monthly-entries p.not-found{
+  padding: 30px;
+  text-align: center;
+  color: #999;
+}
+
 .activity-entry{
   display: grid;
   grid-template-columns: 20% 80%;

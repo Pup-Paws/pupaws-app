@@ -170,8 +170,12 @@ document.getElementById('page').addEventListener('page', function (e) {
     populateReminders();
     createWeightChart();
     createMoodChart();
-  }
-  else if (currPage == '/journal') {
+
+
+  } else if (currPage == '/addreminder'){
+    document.getElementById('addReminderButton').addEventListener('click', saveReminder());
+
+  } else if (currPage == '/journal') {
     populateJournal();
 
   } else if (currPage == '/addDog2Page') {
@@ -205,10 +209,30 @@ function populateJournal(){
   var journalList = document.getElementById('journal-list');
   var _activities_history = activities_history.filter(function(activity) {return activity.dog_id == current_dog_id;});
 
-  var activitiesHTML = `<div class="activities-list"><ul>`;
-  activitiesHTML += _activities_history.map(makeActivityItem).join('\n');
-  activitiesHTML += `</ul></div>`;
-  journalList.innerHTML = activitiesHTML;
+  // Sort data first
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  for (var i = 12; i >= 1; i--) {
+    // filter to this month
+    var _monthly_activities = _activities_history.filter(_record => _record.date.m == i);
+
+    var monthsectionHTML = document.createElement('section');
+    monthsectionHTML.className = 'monthly-entries';
+    monthsectionHTML.innerHTML = `<div class="month-title"><h3>${months[i-1]}</h3></div>`
+    journalList.appendChild(monthsectionHTML);
+
+    if (_monthly_activities.length) {
+      var activitiesHTML = document.createElement('ul');
+      activitiesHTML.innerHTML = _monthly_activities.map(makeActivityItem).join('\n');
+      monthsectionHTML.appendChild(activitiesHTML);
+    }
+    else {
+      monthsectionHTML.innerHTML += `<p class="not-found">There are no activities for this month.</p>`;
+    }
+  }
+
+
+
+
 }
 
 function makeActivityItem(activity, index){
@@ -227,6 +251,8 @@ function makeActivityItem(activity, index){
 }
 
 
+
+
 function makeReminder(reminder) {
   // For now, use a standard date format. But later we can use moment.js
 
@@ -242,6 +268,23 @@ function makeReminder(reminder) {
       </div>
     </li>`;
 }
+
+function saveReminder(){
+  console.log("hey!");
+
+  var reminderDescription = document.getElementById('reminder-description-input');
+  var reminderDay = document.getElementById('day-input');
+  var reminderMonth = document.getElementById('month-input');
+  var reminderYear = document.getElementById('year-input');
+
+  console.log(reminderDescription.value);
+  console.log(reminderDay.value);
+  console.log(reminderMonth.value);
+  console.log(reminderYear.value);
+
+}
+
+
 
 // ------------------------------- FUNCTIONS TO CREATE CHARTS -------------
 function createWeightChart(){
