@@ -155,15 +155,7 @@ var activities_history = [
 
 ]
 
-// CREATE FUNCTIONS FOR THINGS THAT REPEAT ON SCREEN: ACTIVITIES & REMINDERS
-
-
-// DATA UPDATER:
-// Fires every time a page changes
 document.getElementById('page').addEventListener('page', function (e) {
-  // If the current page is the todoListPage, grab the data for it
-  // This needs some improvement
-
   componentHandler.upgradeDom();
 
   if(currPage == '/dashboard'){
@@ -173,9 +165,15 @@ document.getElementById('page').addEventListener('page', function (e) {
 
 
   } else if (currPage == '/addreminder'){
-    document.getElementById('addReminderButton').addEventListener('click', saveReminder());
+    document.getElementById('addReminderButton').addEventListener('click', saveReminder);
 
-  } else if (currPage == '/journal') {
+  } else if (currPage == '/addweight'){
+    document.getElementById('addWeightButton').addEventListener('click', saveWeight);
+
+  }else if (currPage == '/addmood'){
+    document.getElementById('addMoodButton').addEventListener('click', saveMood);
+
+  }else if (currPage == '/journal') {
     populateJournal();
 
   } else if (currPage == '/addDog2Page') {
@@ -229,10 +227,6 @@ function populateJournal(){
       monthsectionHTML.innerHTML += `<p class="not-found">There are no activities for this month.</p>`;
     }
   }
-
-
-
-
 }
 
 function makeActivityItem(activity, index){
@@ -250,12 +244,8 @@ function makeActivityItem(activity, index){
   return activityListItem;
 }
 
-
-
-
 function makeReminder(reminder) {
   // For now, use a standard date format. But later we can use moment.js
-
   return `
     <li class="reminder-item">
       <p class="reminder-date">${reminder.date.y}-${reminder.date.m}-${reminder.date.d}</p>
@@ -270,18 +260,48 @@ function makeReminder(reminder) {
 }
 
 function saveReminder(){
-  console.log("hey!");
-
   var reminderDescription = document.getElementById('reminder-description-input');
   var reminderDay = document.getElementById('day-input');
   var reminderMonth = document.getElementById('month-input');
   var reminderYear = document.getElementById('year-input');
 
-  console.log(reminderDescription.value);
-  console.log(reminderDay.value);
-  console.log(reminderMonth.value);
-  console.log(reminderYear.value);
+  reminderToBeSaved = {
+    title: reminderDescription.value,
+    date: {y:reminderYear.value, m:reminderMonth.value, d:reminderDay.value},
+    status: 0,
+    dog_id: 1
+  }
 
+  reminders.push(reminderToBeSaved);
+  goToPage('/dashboard');
+}
+
+function saveWeight(){
+  var _weight = document.getElementById('weight-input');
+  var today = new Date();
+
+  weightToBeSaved = {
+    weight: _weight.value,
+    date: {y:today.getFullYear(), m:today.getMonth()+1, d:today.getDate()},
+    dog_id: 1
+  }
+
+  weight_history.push(weightToBeSaved);
+  goToPage('/dashboard');
+}
+
+function saveMood(){
+  var checkedValue = document.querySelector('.mood-input:checked').value;
+  var today = new Date();
+
+  moodToBeSaved = {
+    mood_id: checkedValue,
+    date: {y:today.getFullYear(), m:today.getMonth()+1, d:today.getDate()},
+    dog_id: 1
+  }
+
+  mood_history.push(moodToBeSaved);
+  goToPage('/dashboard');
 }
 
 

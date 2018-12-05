@@ -252,7 +252,7 @@ let addDog8Page = `
 
 let dashboardPage = `
 <div class="content-wrapper title">
-    <h2>Dashboard</h2>
+    <!-- <h2>Dashboard</h2> -->
 </div>
 <section class="dog-summary-card">
   <img src="images/merlin.jpg" alt="Merlin" class="dog-photo"/>
@@ -337,17 +337,17 @@ let addMoodPage = `
         <h2>How is Buddy feeling today?</h2>
         <div class="select-mood">
           <label class="mood-form-label" for="sad-radio">
-            <input type="radio" id="sad-radio" class="mood-input" name="options" value="sad" checked>
+            <input type="radio" id="sad-radio" class="mood-input" name="options" value="0" checked>
             <i class="far fa-frown"></i>
           </label>
 
           <label class="mood-form-label" for="meh-radio">
-            <input type="radio" id="meh-radio" class="mood-input" name="options" value="meh">
+            <input type="radio" id="meh-radio" class="mood-input" name="options" value="1">
             <i class="far fa-meh"></i>
           </label>
 
           <label class="mood-form-label" for="happy-radio">
-            <input type="radio" id="happy-radio" class="mood-input" name="options" value="happy">
+            <input type="radio" id="happy-radio" class="mood-input" name="options" value="2">
             <i class="far fa-smile"></i>
           </label>
         </div>
@@ -355,7 +355,7 @@ let addMoodPage = `
     </section>
     <div class="setup-actions">
       <a href="/dashboard" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
-      <a href="/dashboard" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</a>
+      <button type="button" id="addMoodButton" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</button>
     </div>
   </div>
 </section>
@@ -368,14 +368,14 @@ let addWeightPage = `
       <form action="#">
         <h2>How much is Buddy weighing today?</h2>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="breed-input">
+          <input class="mdl-textfield__input" type="text" id="weight-input">
           <label class="mdl-textfield__label" for="breed-input">Current weight</label>
         </div>
       </form>
     </section>
     <div class="setup-actions">
       <a href="/dashboard" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
-      <a href="/dashboard" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</a>
+      <button type="button" id="addWeightButton" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</button>
     </div>
   </div>
 </section>
@@ -385,6 +385,7 @@ let addReminderPage = `
 <section class="content-wrapper setup">
   <div class="setup-content card">
     <section >
+      <form action="#">
         <h2>What do you want to be reminded of?</h2>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" type="text" id="reminder-description-input">
@@ -396,20 +397,19 @@ let addReminderPage = `
           <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="day-input">
           <label class="mdl-textfield__label" for="day-input">DD</label>
         </div>
-
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="month-input">
           <label class="mdl-textfield__label" for="month-input">MM</label>
         </div>
-
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="year-input">
           <label class="mdl-textfield__label" for="year-input">YYYY</label>
         </div>
+      </form>
     </section>
     <div class="setup-actions">
       <a href="/dashboard" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
-      <a href="#" id="addReminderButton" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</a>
+      <button type="button" id="addReminderButton" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</button>
     </div>
   </div>
 </section>
@@ -512,25 +512,40 @@ let journalAddPage = `
         </div>
         <div class="select-mood">
           <label class="mood-form-label" for="sad-radio">
-            <input type="radio" id="sad-radio" class="mood-input" name="options" value="sad" checked>
+            <input type="radio" id="sad-radio" class="mood-input" name="options" value="0" checked>
             <i class="far fa-frown"></i>
           </label>
 
           <label class="mood-form-label" for="meh-radio">
-            <input type="radio" id="meh-radio" class="mood-input" name="options" value="meh">
+            <input type="radio" id="meh-radio" class="mood-input" name="options" value="1">
             <i class="far fa-meh"></i>
           </label>
 
           <label class="mood-form-label" for="happy-radio">
-            <input type="radio" id="happy-radio" class="mood-input" name="options" value="happy">
+            <input type="radio" id="happy-radio" class="mood-input" name="options" value="2">
             <i class="far fa-smile"></i>
           </label>
+        </div>
+        <div>
+          <h2>When did the activity happen?</h2>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="day-input">
+            <label class="mdl-textfield__label" for="day-input">DD</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="month-input">
+            <label class="mdl-textfield__label" for="month-input">MM</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="year-input">
+            <label class="mdl-textfield__label" for="year-input">YYYY</label>
+          </div>
         </div>
       </form>
     </section>
     <div class="setup-actions">
       <a href="/journal" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
-      <a href="/journal" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Finish</a>
+      <button type="button" id="addActivityButton" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</button>
     </div>
   </div>
 </section>

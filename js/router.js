@@ -22,7 +22,6 @@ window.addEventListener('load', (e) => {
 
   // If we clich an Anchor (<a>) in HTML, route to it's HREF value without reloading
   document.addEventListener('click', (e) => {
-    console.log(e)
     if (e.target.nodeName == 'A') {
       // alert(e.target.pathname)
       e.preventDefault();
