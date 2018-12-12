@@ -50,7 +50,7 @@ var owner = [
 ];
 
 var dog = [
-  {id: 1, name: "Merlin", breed: "Chihuahua x Jack Russel", date: {y:2018, m:10, d:1}, gender: "Male", photo: "dog1.jpg", owner_id: 1},
+  {id: 1, name: "Merlin", breed: "Chihuahua x Jack Russel", date: {y:2015, m:11, d:21}, gender: "Male", photo: "dog1.jpg", owner_id: 1},
   {id: 2, name: "Charles Barkly", breed: "American Bulldog", date: {y:2016, m:04, d:29}, gender: "Female", photo: "dog2.jpg", owner_id: 1},
 ];
 
@@ -164,10 +164,18 @@ document.getElementById('page').addEventListener('page', function (e) {
   componentHandler.upgradeDom();
 
   if(currPage == '/dashboard'){
+
+
     getImageByImageId("dog1", showImageCb);
 
-    var imageTarget = document.getElementById('dog-photo');
+    var dogName = document.getElementById('dog-name');
+    dogName.innerHTML = dog[0].name;
 
+
+    var dogAge = document.getElementById('dog-age');
+    dogAge.innerHTML = moment().diff(`${dog[0].date.y}-${dog[0].date.m}-${dog[0].date.d}`, 'years') + " years old";
+
+    var imageTarget = document.getElementById('dog-photo');
     function showImageCb(request){
       console.log(request);
         var matching = request.target.result;
@@ -218,23 +226,38 @@ document.getElementById('page').addEventListener('page', function (e) {
 
     });
 
-  } else if (currPage == '/adddog8') {
+  } else if (currPage == '/adddog2') {
+
+    document.getElementById('dogNameButton').addEventListener('click', function(){
+      var _dogName = document.getElementById('pet-name-input').value;
+      if(_dogName){
+        dog[0].name = _dogName;
+      }
+    });
 
   } else if (currPage == '/profile') {
     console.log(owner);
     var ownerName = document.getElementById('owner-name');
     ownerName.innerHTML = owner[0].firstName + " " + owner[0].lastName;
 
-  } else if (currPage == '/addDog3Page') {
+  } else if (currPage == '/adddog4') {
+    document.getElementById('dobSetup').addEventListener('click', function(){
+      var _day = document.getElementById('day-input').value;
+      var _month = document.getElementById('month-input').value;
+      var _year = document.getElementById('year-input').value;
 
-  } else if (currPage == '/addDog4Page') {
+      if(_day){
+          dog[0].date.d = _day;
+      }
 
-  } else if (currPage == '/addDog5Page') {
+      if(_month){
+          dog[0].date.m = _month;
+      }
 
-  } else if (currPage == '/addReminderPage') {
-
-  } else if (currPage == '/addWeightPage') {
-
+      if(_year){
+          dog[0].date.y = _year;
+      }
+    });
   } else if (currPage == '/journaladd') {
     document.getElementById('addActivityButton').addEventListener('click', saveActivity);
   }

@@ -81,7 +81,7 @@ let addDog2Page = `
     </div>
     <div class="setup-actions">
       <a href="/adddog1" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">back</a>
-      <a href="/adddog3" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
+      <a href="/adddog3" id="dogNameButton" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
     </div>
   </div>
 </section>
@@ -134,7 +134,7 @@ let addDog4Page = `
     </div>
     <div class="setup-actions">
       <a href="/adddog3" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">back</a>
-      <a href="/adddog5" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
+      <a href="/adddog5" id="dobSetup" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
     </div>
   </div>
 </section>
@@ -279,8 +279,8 @@ let dashboardPage = `
 <section class="dog-summary-card">
   <img alt="Merlin" class="dog-photo" id="dog-photo" style="display:none"/>
   <div class="dog-info">
-    <p class="dog-name">Merlin</p>
-    <p class="dog-age">2 years old</p>
+    <p class="dog-name" id="dog-name">Merlin</p>
+    <p class="dog-age" id="dog-age">2 years old</p>
   </div>
 </section>
 
