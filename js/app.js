@@ -235,8 +235,8 @@ document.getElementById('page').addEventListener('page', function (e) {
 
   } else if (currPage == '/addWeightPage') {
 
-  } else if (currPage == '/journalAddPage') {
-
+  } else if (currPage == '/journaladd') {
+    document.getElementById('addActivityButton').addEventListener('click', saveActivity);
   }
 }, false);
 
@@ -333,7 +333,7 @@ function saveWeight(){
   goToPage('/dashboard');
 }
 
-function saveMood(){
+function saveMood(shouldRedirect){
   var checkedValue = document.querySelector('.mood-input:checked').value;
   var today = new Date();
 
@@ -344,7 +344,30 @@ function saveMood(){
   }
 
   mood_history.push(moodToBeSaved);
-  goToPage('/dashboard');
+  if(shouldRedirect){
+    goToPage('/dashboard');
+  }
+}
+
+function saveActivity(){
+  saveMood(shouldRedirect = false);
+
+  var _day = document.getElementById('day-input').value;
+  var _month = document.getElementById('month-input').value;
+  var _year = document.getElementById('year-input').value;
+  var _description = document.getElementById('description-input').value;
+  var _title = document.getElementById('title-input').value;
+
+  activityToBeSaved = {
+    title: _title,
+    description: _description,
+    date: {y:_year, m:_month, d:_day},
+    dog_id:1,
+    photo: "image1.jpg"
+  }
+
+  activities_history.push(activityToBeSaved);
+  goToPage('/journal');
 }
 
 

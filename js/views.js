@@ -525,11 +525,11 @@ let journalAddPage = `
       <form action="#">
         <h2>Log activity</h2>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="weight-input">
+          <input class="mdl-textfield__input" type="text" id="title-input">
           <label class="mdl-textfield__label" for="food-input">Activity title</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield">
-          <textarea class="mdl-textfield__input" type="text" rows= "1" id="sample5" ></textarea>
+          <textarea class="mdl-textfield__input" type="text" rows= "1" id="description-input" ></textarea>
           <label class="mdl-textfield__label" for="sample5">Description</label>
         </div>
         <div class="select-mood">
