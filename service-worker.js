@@ -4,9 +4,9 @@ const cacheName = 'puppaws';
 // Files that must load for the app to be operational
 const staticAssets = [
   './',
-  // './js/app.js',
+  './js/app.js',
   './css/reset.css',
-  // './css/main.css'
+  './css/main.css'
 ];
 
 // Cache the main files on install
