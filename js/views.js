@@ -164,14 +164,14 @@ let addDog5Page = `
 
     <div class="setup-actions">
       <a href="/adddog4" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">back</a>
-      <a href="/adddog6" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
+      <a href="/adddog8" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
     </div>
   </div>
 </section>
 `;
 
 let addDog6Page = `
-<section class="content-wrapper setup">
+<!-- <section class="content-wrapper setup">
   <header>
     <img src="images/logo_500px.png" alt="dog icon" class="dog-logo">
   </header>
@@ -200,11 +200,11 @@ let addDog6Page = `
       <a href="/adddog7" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
     </div>
   </div>
-</section>
+</section> -->
 `;
 
 let addDog7Page = `
-<section class="content-wrapper setup">
+<!-- <section class="content-wrapper setup">
   <div class="setup-content card">
     <h2>What kind of medication does Buddy take?</h2>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -225,16 +225,38 @@ let addDog7Page = `
     </div>
 
     <div class="setup-actions">
-      <a href="/adddog6" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">back</a>
-      <a href="/adddog8" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
+      <a href="/adddog5" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">back</a>
+      <a href="/dashboard" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Finish</a>
     </div>
   </div>
-</section>
+</section> -->
 `;
 
 
 let addDog8Page = `
 <section class="content-wrapper setup">
+  <header>
+    <img src="images/logo_500px.png" alt="dog icon" class="dog-logo">
+  </header>
+
+  <div class="setup-content card">
+    <h2>Upload your pet's photo.</h2>
+    <span class="btn btn-default btn-file">
+        Click here to choose a photo <input type="file" id="fileSelector">
+    </span>
+
+    <div id="image-here"></div>
+
+    <div class="setup-actions">
+      <a href="/adddog5" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">back</a>
+      <a href="/dashboard" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Finish</a>
+    </div>
+  </div>
+</section>
+`;
+
+/*let addDog8Page = `
+<!-- <section class="content-wrapper setup">
   <header>
     <img src="images/logo_500px.png" alt="dog icon" class="dog-logo">
   </header>
@@ -247,15 +269,15 @@ let addDog8Page = `
       <a href="/adddog2" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Yes</a>
     </div>
   </div>
-</section>
-`;
+</section> -->
+`;*/
 
 let dashboardPage = `
 <div class="content-wrapper title">
     <!-- <h2>Dashboard</h2> -->
 </div>
 <section class="dog-summary-card">
-  <img src="images/merlin.jpg" alt="Merlin" class="dog-photo"/>
+  <img alt="Merlin" class="dog-photo" id="dog-photo" style="display:none"/>
   <div class="dog-info">
     <p class="dog-name">Merlin</p>
     <p class="dog-age">2 years old</p>

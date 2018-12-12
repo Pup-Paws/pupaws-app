@@ -240,6 +240,31 @@ input.gender-input[type="radio"]:checked + i, input.mood-input[type="radio"]:che
   opacity: 1;
 }
 
+
+.btn-file {
+  /*position: relative;*/
+  overflow: hidden;
+  margin: 50px 0;
+  display: block;
+  background-color: #EFEFEF;
+  padding: 30px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    outline: none;
+    background: #fff;
+    cursor: inherit;
+    display: block;
+}
+
 /*------------------------------- DASHBOARD ---------*/
 section.dashboard-section{
   padding: var(--medium-spacing);

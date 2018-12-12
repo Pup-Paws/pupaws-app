@@ -152,18 +152,36 @@ var activities_history = [
     mood_history_id: 0,
     dog_id:1,
   }
-
 ]
+
+
 
 document.getElementById('page').addEventListener('page', function (e) {
   componentHandler.upgradeDom();
 
   if(currPage == '/dashboard'){
+    getImageByImageId("dog1", showImageCb);
+
+    var imageTarget = document.getElementById('dog-photo');
+
+    function showImageCb(request){
+      console.log(request);
+        var matching = request.target.result;
+        if (matching !== undefined) {
+          if (matching.imageFile) {
+            imageTarget.src = window.URL.createObjectURL(matching.imageFile);
+            window.URL.revokeObjectURL(matching.imageFile);
+          }
+        } else {
+          console.log("No match was found.");
+          imageTarget.src = "../images/dogs/1/image1.jpg";
+        }
+        imageTarget.style.display = "block";
+    }
+
     populateReminders();
     createWeightChart();
     createMoodChart();
-
-
   } else if (currPage == '/addreminder'){
     document.getElementById('addReminderButton').addEventListener('click', saveReminder);
 
@@ -176,6 +194,9 @@ document.getElementById('page').addEventListener('page', function (e) {
   }else if (currPage == '/journal') {
     populateJournal();
 
+  }else if (currPage == '/adddog8') {
+    openDB();
+    document.getElementById('fileSelector').addEventListener('change', handleFileSelection, false); // Add an onchange event listener for the <input id="fileSelector"> element.
   } else if (currPage == '/addDog2Page') {
 
   } else if (currPage == '/addDog3Page') {
@@ -353,4 +374,27 @@ function createMoodChart(){
   } ;
 
   new Chartist.Line('#mood-chart', moodData, options);
+}
+
+function handleFiles(files) {
+  var target = document.getElementById('image-here');
+
+  if (!files.length) {
+    target.innerHTML = "<p>No files selected!</p>";
+  } else {
+    target.innerHTML = "";
+
+    for (var i = 0; i < files.length; i++) {
+      var img = document.createElement("img");
+      img.src = window.URL.createObjectURL(files[i]);
+      // img.height = 60;
+      img.onload = function() {
+        // window.URL.revokeObjectURL(this.src);
+      }
+      target.appendChild(img);
+      // var info = document.createElement("span");
+      // info.innerHTML = files[i].name + ": " + files[i].size + " bytes";
+      // li.appendChild(info);
+    }
+  }
 }
