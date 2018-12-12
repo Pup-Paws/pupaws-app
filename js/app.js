@@ -45,9 +45,13 @@ var current_dog_id = 1;
 
 var moods = ["Sad =(", "Okay :|", "Happy :)"];
 
+var owner = [
+  {id: 1, firstName: "Bill", lastName: "Murray"},
+];
+
 var dog = [
-  {id: 1, name: "Merlin", breed: "Chihuahua x Jack Russel", date: {y:2018, m:10, d:1}, gender: "Male", photo: "dog1.jpg"},
-  {id: 2, name: "Charles Barkly", breed: "American Bulldog", date: {y:2016, m:04, d:29}, gender: "Female", photo: "dog2.jpg"},
+  {id: 1, name: "Merlin", breed: "Chihuahua x Jack Russel", date: {y:2018, m:10, d:1}, gender: "Male", photo: "dog1.jpg", owner_id: 1},
+  {id: 2, name: "Charles Barkly", breed: "American Bulldog", date: {y:2016, m:04, d:29}, gender: "Female", photo: "dog2.jpg", owner_id: 1},
 ];
 
 var weight_history = [
@@ -197,17 +201,35 @@ document.getElementById('page').addEventListener('page', function (e) {
   }else if (currPage == '/adddog8') {
     openDB();
     document.getElementById('fileSelector').addEventListener('change', handleFileSelection, false); // Add an onchange event listener for the <input id="fileSelector"> element.
-  } else if (currPage == '/addDog2Page') {
+
+  } else if (currPage == '/adddog1') {
+
+    document.getElementById('ownerInfo').addEventListener('click', function(){
+      var firstName = document.getElementById('first-name-input').value;
+      var lastName = document.getElementById('last-name-input').value;
+
+      if(firstName){
+        owner[0].firstName = firstName;
+      }
+
+      if(lastName){
+        owner[0].lastName = lastName;
+      }
+
+    });
+
+  } else if (currPage == '/adddog8') {
+
+  } else if (currPage == '/profile') {
+    console.log(owner);
+    var ownerName = document.getElementById('owner-name');
+    ownerName.innerHTML = owner[0].firstName + " " + owner[0].lastName;
 
   } else if (currPage == '/addDog3Page') {
 
   } else if (currPage == '/addDog4Page') {
 
   } else if (currPage == '/addDog5Page') {
-
-  } else if (currPage == '/addDog6Page') {
-
-  } else if (currPage == '/addDog7Page') {
 
   } else if (currPage == '/addReminderPage') {
 

@@ -59,7 +59,7 @@ let addDog1Page = `
 
     <div class="setup-actions">
       <a href="/welcomescreen2" class="skip-button mdl-button mdl-js-button mdl-js-ripple-effect">back</a>
-      <a href="/adddog2" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Continue</a>
+      <a href="/adddog2" class="setup-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ownerInfo">Continue</a>
     </div>
   </div>
 </section>
@@ -525,7 +525,7 @@ let journalAddPage = `
       <form action="#">
         <h2>Log activity</h2>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?" type="text" id="weight-input">
+          <input class="mdl-textfield__input" type="text" id="weight-input">
           <label class="mdl-textfield__label" for="food-input">Activity title</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield">
@@ -577,7 +577,7 @@ let profilePage = `
 <div class="content-wrapper">
   <div class="owner-info">
     <img src="https://fillmurray.com/300/300" alt="" class="profile-image"/>
-    <h3>Bill Murray</h3>
+    <h3 id="owner-name">Bill Murray</h3>
   </div>
   <div class="dogs-info">
     <ul>
